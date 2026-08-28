@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="application-name" content="SE ADIB" /><meta name="apple-mobile-web-app-title" content="SE ADIB" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9YM84ZSWMF"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-9YM84ZSWMF');</script>
+    <meta name="msvalidate.01" content="F3ADCCD43A5041C5EEE1798E6DBE9F49" />
+    <meta name="description" content="Projects built by SE Adib (Abdullah Al Adib / Adib Halimi) — websites, web apps, blogs, and experimental tools for Dhaka College students." />
+    <meta name="keywords" content="SE Adib Halimi, Adib Halimi, seadib, seadix, SE Adib, Abdullah Al Adib, Adib, Dr Sahitto, adib dhaka college, HSC 2027, Dhaka College, web developer" />
+    <meta name="robots" content="index, follow" /><meta name="author" content="SE Adib Halimi" />
+    <title>Projects — SE ADIB (SE Adib Halimi / Abdullah Al Adib)</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" /><link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png" /><link rel="shortcut icon" href="favicon.ico" /><link rel="manifest" href="site.webmanifest" />
+    <meta property="og:site_name" content="SE ADIB" />
+    <meta property="og:title" content="Projects — SE ADIB (Abdullah Al Adib / Adib Halimi)" /><meta property="og:description" content="Projects built by SE Adib — Dhaka College Science Club, Hall Website, Personal Blog, Dr Sahitto." /><meta property="og:url" content="https://adi.pro.bd/projects.html" /><meta property="og:image" content="https://adi.pro.bd/adib.jpg" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <canvas id="matrixCanvas"></canvas><div id="scrollProgress"></div><div class="cursor-glow" id="cursorGlow"></div>
+    <button class="theme-toggle" id="themeToggle" aria-label="Switch theme"><svg viewBox="0 0 24 24" id="themeIcon"><circle cx="12" cy="12" r="5"/></svg></button>
+    <nav class="nav" id="mainNav"><div class="nav-inner"><a href="index.html" class="nav-logo">SE <span class="dim">ADIB</span></a><button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button><div class="nav-links" id="navLinks"><a href="index.html" class="nav-link">home</a><a href="about.html" class="nav-link">about</a><a href="projects.html" class="nav-link active">projects</a><a href="skills.html" class="nav-link">skills</a><div class="nav-item has-mega"><a href="blog.html" class="nav-link">dhaka_college</a><div class="mega-menu"><div class="mega-section"><h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>notes</h4><a href="chemistry.html">chemistry.html</a><a href="math.html">math.html</a></div><div class="mega-section"><h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>q&amp;a</h4><a href="blog.html#qa">questions</a><a href="blog.html#answers">solutions</a></div><div class="mega-section"><h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>posts</h4><a href="blog.html#posts">latest</a><a href="blog.html#important">updates</a></div><div class="mega-section"><h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>links</h4><a href="blog.html#resources">resources</a><a href="https://dhakacollegescienceclub.github.io" target="_blank">science_club</a></div></div></div><a href="contact.html" class="nav-link">contact</a></div></div></nav>
+
+    <div class="main-wrapper">
+        <div class="page-header"><h1>&lt;<span class="accent">projects</span>&gt;</h1><p>things built by SE Adib (seadib / seadix)</p></div>
+
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">all</button>
+            <button class="filter-btn" data-filter="web">web</button>
+            <button class="filter-btn" data-filter="blog">blog</button>
+            <button class="filter-btn" data-filter="experiment">experiment</button>
+        </div>
+
+        <div class="grid-2" id="projectGrid">
+            <!-- Project 1: dcsc-web.png -->
+            <div class="project-card stagger-item" data-url="https://dhakacollegescienceclub.github.io" data-name="DC Science Club" data-category="web">
+                <div class="browser-bar">
+                    <div class="browser-dots"><span class="browser-dot r"></span><span class="browser-dot y"></span><span class="browser-dot g"></span></div>
+                    <div class="browser-address"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>dhakacollegescienceclub.github.io</div>
+                </div>
+                <div class="project-thumb-wrap">
+                    <img src="dcsc-web.png" alt="Dhaka College Science Club Preview" class="project-thumb" onerror="this.onerror=null; this.src='adib.jpg';" />
+                </div>
+                <div class="project-body">
+                    <div class="project-title">Dhaka College Science Club</div>
+                    <p class="project-desc">Official web portal for Dhaka College Science Club. Features events, member resources, science fair notices, and community updates.</p>
+                    <div class="project-footer">
+                        <span class="tag">web</span>
+                        <a href="https://dhakacollegescienceclub.github.io" target="_blank" class="btn btn-outline btn-sm">Visit Website ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: dchall-web.png -->
+            <div class="project-card stagger-item" data-url="https://dchall.netlify.app" data-name="DC Hall" data-category="web">
+                <div class="browser-bar">
+                    <div class="browser-dots"><span class="browser-dot r"></span><span class="browser-dot y"></span><span class="browser-dot g"></span></div>
+                    <div class="browser-address"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>dchall.netlify.app</div>
+                </div>
+                <div class="project-thumb-wrap">
+                    <img src="dchall-web.png" alt="DC Hall Website Preview" class="project-thumb" onerror="this.onerror=null; this.src='adib.jpg';" />
+                </div>
+                <div class="project-body">
+                    <div class="project-title">DC Hall Website</div>
+                    <p class="project-desc">Information hub for Dhaka College residential halls. Modern responsive web portal built for college students.</p>
+                    <div class="project-footer">
+                        <span class="tag">web</span>
+                        <a href="https://dchall.netlify.app" target="_blank" class="btn btn-outline btn-sm">Visit Website ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: seadib-web.png -->
+            <div class="project-card stagger-item" data-url="https://seadib.blogspot.com" data-name="Personal Blog" data-category="blog">
+                <div class="browser-bar">
+                    <div class="browser-dots"><span class="browser-dot r"></span><span class="browser-dot y"></span><span class="browser-dot g"></span></div>
+                    <div class="browser-address"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>seadib.blogspot.com</div>
+                </div>
+                <div class="project-thumb-wrap">
+                    <img src="seadib-web.png" alt="SE Adib Personal Blog Preview" class="project-thumb" onerror="this.onerror=null; this.src='adib.jpg';" />
+                </div>
+                <div class="project-body">
+                    <div class="project-title">Personal Blog (seadib / seadix)</div>
+                    <p class="project-desc">Personal blog by SE Adib — tech insights, programming tutorials, experiences, and learning journal.</p>
+                    <div class="project-footer">
+                        <span class="tag">blog</span>
+                        <a href="https://seadib.blogspot.com" target="_blank" class="btn btn-outline btn-sm">Visit Website ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4: drsahitto-web.png -->
+            <div class="project-card stagger-item" data-url="https://drsahitto.blogspot.com" data-name="Dr Sahitto" data-category="blog">
+                <div class="browser-bar">
+                    <div class="browser-dots"><span class="browser-dot r"></span><span class="browser-dot y"></span><span class="browser-dot g"></span></div>
+                    <div class="browser-address"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>drsahitto.blogspot.com</div>
+                </div>
+                <div class="project-thumb-wrap">
+                    <img src="drsahitto-web.png" alt="Dr Sahitto Literature Preview" class="project-thumb" onerror="this.onerror=null; this.src='adib.jpg';" />
+                </div>
+                <div class="project-body">
+                    <div class="project-title">Dr Sahitto Literature</div>
+                    <p class="project-desc">Bengali literature, poetry, essays &amp; creative writing platform curated by Dr Sahitto.</p>
+                    <div class="project-footer">
+                        <span class="tag">literature</span>
+                        <a href="https://drsahitto.blogspot.com" target="_blank" class="btn btn-outline btn-sm">Visit Website ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5: voice-web.png -->
+            <div class="project-card stagger-item" data-category="experiment">
+                <div class="browser-bar">
+                    <div class="browser-dots"><span class="browser-dot r"></span><span class="browser-dot y"></span><span class="browser-dot g"></span></div>
+                    <div class="browser-address"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>voice.adib.dev</div>
+                </div>
+                <div class="project-thumb-wrap">
+                    <img src="voice-web.png" alt="Voice Web App Preview" class="project-thumb" onerror="this.onerror=null; this.src='adib.jpg';" />
+                </div>
+                <div class="project-body">
+                    <div class="project-title">Voice Web Application</div>
+                    <p class="project-desc">Experimental voice command &amp; audio processing web app built for speech recognition testing.</p>
+                    <div class="project-footer">
+                        <span class="tag">experiment</span>
+                        <span style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text3);">experimental</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6: adib-web.png -->
+            <div class="project-card stagger-item" data-url="https://adi.pro.bd" data-name="This Portfolio" data-category="web">
+                <div class="browser-bar">
+                    <div class="browser-dots"><span class="browser-dot r"></span><span class="browser-dot y"></span><span class="browser-dot g"></span></div>
+                    <div class="browser-address"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>adi.pro.bd</div>
+                </div>
+                <div class="project-thumb-wrap">
+                    <img src="adib-web.png" alt="SE ADIB Portfolio Preview" class="project-thumb" onerror="this.onerror=null; this.src='adib.jpg';" />
+                </div>
+                <div class="project-body">
+                    <div class="project-title">This Portfolio (SE ADIB)</div>
+                    <p class="project-desc">The official personal portfolio website — built with custom glassmorphic UI, matrix rain, and full SEO support.</p>
+                    <div class="project-footer">
+                        <span class="tag">web</span>
+                        <a href="https://adi.pro.bd" target="_blank" class="btn btn-outline btn-sm">Visit Website ↗</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer"><p>built by <span class="green">SE ADIB</span> (Adib Halimi) © 2026</p></footer>
+    <div class="modal-overlay" id="projectModal"><div class="modal-box"><p id="modalMessage"></p><div class="modal-buttons"><button class="btn btn-outline btn-sm" id="modalCancel">cancel</button><button class="btn btn-primary btn-sm" id="modalVisit">visit()</button></div></div></div>
+    <script src="script.js"></script>
+    <script>
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const f = btn.dataset.filter;
+                document.querySelectorAll('.project-card').forEach(c => {
+                    c.style.display = (f === 'all' || c.dataset.category === f) ? '' : 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
