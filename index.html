@@ -138,10 +138,10 @@
                         <div class="code-body">
                             <div><span class="line-num">1</span><span class="keyword">const</span> <span class="variable">developer</span> <span class="punctuation">= {</span></div>
                             <div><span class="line-num">2</span>  <span class="property">name</span><span class="punctuation">:</span> <span class="string">'SE Adib Halimi (Abdullah Al Adib)'</span><span class="punctuation">,</span></div>
-                            <div><span class="line-num">3</span>  <span class="property">handles</span><span class="punctuation">: {</span> <span class="property">fb</span><span class="punctuation">:</span> <span class="string">'@fb'</span><span class="punctuation">,</span> <span class="property">m</span><span class="punctuation">:</span> <span class="string">'@m'</span><span class="punctuation">,</span> <span class="property">wa</span><span class="punctuation">:</span> <span class="string">'@wa'</span><span class="punctuation">,</span> <span class="property">insta</span><span class="punctuation">:</span> <span class="string">'@insta'</span><span class="punctuation">,</span> <span class="property">tg</span><span class="punctuation">:</span> <span class="string">'@tg'</span><span class="punctuation">,</span> <span class="property">gh</span><span class="punctuation">:</span> <span class="string">'@github'</span> <span class="punctuation">},</span></div>
-                            <div><span class="line-num">4</span>  <span class="property">role</span><span class="punctuation">:</span> <span class="string">'Software Engineer & Web Developer'</span><span class="punctuation">,</span></div>
+                            <div><span class="line-num">3</span>  <span class="property">aliases</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">'seadib'</span><span class="punctuation">,</span> <span class="string">'seadix'</span><span class="punctuation">,</span> <span class="string">'Adib Halimi'</span><span class="punctuation">,</span> <span class="string">'Dr Sahitto'</span><span class="punctuation">],</span></div>
+                            <div><span class="line-num">4</span>  <span class="property">role</span><span class="punctuation">:</span> <span class="string">'Software Engineer &amp; Web Developer'</span><span class="punctuation">,</span></div>
                             <div><span class="line-num">5</span>  <span class="property">college</span><span class="punctuation">:</span> <span class="string">'Dhaka College (HSC 2027)'</span><span class="punctuation">,</span></div>
-                            <div><span class="line-num">6</span>  <span class="property">location</span><span class="punctuation">:</span> <span class="string">'Bangladesh'</span><span class="punctuation">,</span></div>
+                            <div><span class="line-num">6</span>  <span class="property">skills</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">'HTML'</span><span class="punctuation">,</span> <span class="string">'CSS'</span><span class="punctuation">,</span> <span class="string">'JS'</span><span class="punctuation">,</span> <span class="string">'C'</span><span class="punctuation">],</span></div>
                             <div><span class="line-num">7</span>  <span class="property">goal</span><span class="punctuation">:</span> <span class="string">'Build the impossible'</span></div>
                             <div><span class="line-num">8</span><span class="punctuation">};</span></div>
                         </div>
@@ -330,7 +330,41 @@
     </div>
 
     <footer class="footer">
-        <p>built by <span class="green">SE ADIB</span> (Adib Halimi) © 2026</p>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="footer-logo">SE <span class="dim">ADIB</span></div>
+                <p class="footer-tagline">Software Engineer &amp; Web Developer • Dhaka College (HSC 2027)</p>
+                <div class="footer-location">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span>Bangladesh</span>
+                </div>
+            </div>
+            <div class="footer-links-col">
+                <div class="footer-heading">// navigation</div>
+                <a href="index.html">home</a>
+                <a href="about.html">about</a>
+                <a href="projects.html">projects</a>
+                <a href="skills.html">skills</a>
+                <a href="blog.html">dhaka_college</a>
+                <a href="contact.html">contact</a>
+                <a href="link/">private_files</a>
+            </div>
+            <div class="footer-links-col">
+                <div class="footer-heading">// connect</div>
+                <a href="@fb" target="_blank">facebook (@seadix)</a>
+                <a href="@m" target="_blank">messenger (@seadix)</a>
+                <a href="@wa" target="_blank">whatsapp (wa.me/sahitto)</a>
+                <a href="@insta" target="_blank">instagram (@se_adib)</a>
+                <a href="@tg" target="_blank">telegram (@DrSahitto)</a>
+                <a href="@github" target="_blank">github (@seadib)</a>
+                <a href="@call">call directly</a>
+                <a href="@mail">email</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>built with <span class="green">♥</span> by <span class="green">SE ADIB</span> (Adib Halimi) &copy; 2026</div>
+            <div class="footer-sub">// Build the impossible</div>
+        </div>
     </footer>
 
     <div class="modal-overlay" id="projectModal"><div class="modal-box"><p id="modalMessage">Visit this site?</p><div class="modal-buttons"><button class="btn btn-outline btn-sm" id="modalCancel">cancel</button><button class="btn btn-primary btn-sm" id="modalVisit">visit()</button></div></div></div>
