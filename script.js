@@ -568,3 +568,28 @@ function escapeHtml(str) {
     '"': '&quot;'
   }[tag] || tag));
 }
+
+  /* ---- Auto-align contact form height with code window on desktop ---- */
+  function alignContactForm() {
+    if (window.innerWidth > 768) {
+      const codeWin = document.querySelector('.code-window');
+      const form = document.querySelector('#contactForm');
+      if (codeWin && form && codeWin.closest('section') === form.closest('section')) {
+        const textarea = form.querySelector('textarea[name="message"]');
+        if (textarea) {
+          const currentFormH = form.offsetHeight;
+          const targetH = codeWin.offsetHeight;
+          const currentTextareaH = textarea.offsetHeight;
+          const diff = targetH - currentFormH;
+          if (Math.abs(diff) >= 2) {
+            textarea.style.height = (currentTextareaH + diff) + 'px';
+            textarea.style.minHeight = (currentTextareaH + diff) + 'px';
+          }
+        }
+      }
+    }
+  }
+  window.addEventListener('load', alignContactForm);
+  window.addEventListener('resize', alignContactForm);
+  setTimeout(alignContactForm, 100);
+  setTimeout(alignContactForm, 500);
