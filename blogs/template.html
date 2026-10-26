@@ -125,19 +125,145 @@
                 </div>
             </div>
 
-            <!-- 5. Article Content -->
+            <!-- 5. Article Content & Multifile Media Showcase -->
             <div class="article-content">
-                <p>Write your engaging introduction paragraph here...</p>
+                <p class="blog-lead">This master template showcases every multimedia embedding method, interactive file attachment, positioning layout, and rich styling option available for your blogs.</p>
 
-                <blockquote>
-                    "Add an inspirational quote or highlight sentence here."
-                </blockquote>
+                <h2 id="video-section" class="blog-h2">১. ভিডিও এম্বেড করার নিয়মসমূহ (YouTube, Google Drive, Direct Upload)</h2>
+                <p>আপনি ৩টি আলাদা পদ্ধতিতে ব্লগের যেকোনো স্থানে ভিডিও যুক্ত করতে পারবেন:</p>
+                
+                <h3 class="blog-h3">পদ্ধতি ১: YouTube Video Embed (Responsive 16:9)</h3>
+                <div class="video-responsive">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <span class="blog-caption">// YouTube রেসপন্সিভ ভিডিও প্লেয়ার — মোবাইল ও ল্যাপটপে স্বয়ংক্রিয়ভাবে খাপ খায়</span>
 
-                <h2 id="section-1">১. প্রথম অধ্যায় বা সেকশন</h2>
-                <p>Write your detailed thoughts, reflections, or programming explanations here...</p>
+                <h3 class="blog-h3">পদ্ধতি ২: Google Drive Video Preview Embed</h3>
+                <p>গুগল ড্রাইভে ভিডিও আপলোড করে "Anyone with the link" শেয়ার পারমিশন দিলে তা সরাসরি ব্লগে দেখা যাবে:</p>
+                <div class="video-responsive">
+                    <iframe src="https://drive.google.com/file/d/YOUR_FILE_ID/preview" allow="autoplay"></iframe>
+                </div>
 
-                <h2 id="section-2">২. দ্বিতীয় অধ্যায় বা সেকশন</h2>
-                <p>Continue writing your article content here...</p>
+                <h3 class="blog-h3">পদ্ধতি ৩: সরাসরি ভিডিও ফাইল আপলোড (HTML5 Video Player)</h3>
+                <div class="video-responsive">
+                    <video controls poster="../images/profile/adibp.jpg">
+                        <source src="../files/video_sample.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <hr class="blog-divider" />
+
+                <h2 id="audio-section" class="blog-h2">২. অডিও এম্বেড ও প্লেয়ার (Voice Notes, Podcasts & Drive Audio)</h2>
+                <p>ভয়েস নোট, কুরআন তিলাওয়াত বা যে কোনো অডিও লেকচারের জন্য এই কার্ডগুলো ব্যবহার করতে পারেন:</p>
+
+                <!-- Audio Card 1: Direct Player -->
+                <div class="blog-audio-card">
+                    <div style="display:flex;align-items:center;gap:10px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                        <strong>কুরআন তিলাওয়াত ও তাফসির — পর্ব ০১</strong>
+                        <span style="font-size:0.75rem;color:var(--text3);margin-left:auto;">MP3 • 4.8 MB</span>
+                    </div>
+                    <audio controls style="width:100%;">
+                        <source src="../files/sample_audio.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+
+                <hr class="blog-divider" />
+
+                <h2 id="pdf-section" class="blog-h2">৩. পিডিএফ এম্বেড ও অনলাইন রিডার (Interactive PDF Viewer)</h2>
+                <p>পিডিএফ ফাইল সরাসরি ব্লগের ভেতরেই স্ক্রল করে পড়ার জন্য নিচের আইফ্রেম রিডার ব্যবহার করুন:</p>
+
+                <!-- PDF Viewer Embed -->
+                <iframe src="../files/adib.pdf" class="pdf-viewer-embed" title="Interactive PDF Document Viewer"></iframe>
+                <span class="blog-caption">// ইন্টারেক্টিভ পিডিএফ ভিউয়ার — জুম, স্ক্রল ও ফুলস্ক্রিন রিডিং সাপোর্টসহ</span>
+
+                <hr class="blog-divider" />
+
+                <h2 id="files-section" class="blog-h2">৪. যে কোনো ফাইল এটাচমেন্ট ও ডাউনলোড কার্ড (PDF, ZIP, Code, APK)</h2>
+                <p>পাঠকদের ডাউনলোড করার সুযোগ দিতে প্রিমিয়াম লুকের ডাউনলোড কার্ড:</p>
+
+                <!-- File 1: PDF Download Card -->
+                <div class="file-attachment-card">
+                    <div class="file-info-group">
+                        <div class="file-icon-box pdf">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                        </div>
+                        <div style="min-width:0;">
+                            <div class="file-meta-name">HSC 2027 Chemistry First Paper Handnotes.pdf</div>
+                            <div class="file-meta-sub">PDF Document &bull; 2.4 MB &bull; 18 Pages &bull; Handwritten by SE ADIB</div>
+                        </div>
+                    </div>
+                    <div class="file-actions-row">
+                        <a href="../files/adib.pdf" target="_blank" class="btn btn-outline btn-sm">read_online() ↗</a>
+                        <a href="../files/adib.pdf" download class="btn btn-primary btn-sm">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            download()
+                        </a>
+                    </div>
+                </div>
+
+                <!-- File 2: ZIP / Code Archive Download Card -->
+                <div class="file-attachment-card">
+                    <div class="file-info-group">
+                        <div class="file-icon-box zip">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+                        </div>
+                        <div style="min-width:0;">
+                            <div class="file-meta-name">Project_Source_Code_Complete.zip</div>
+                            <div class="file-meta-sub">ZIP Archive &bull; 14.8 MB &bull; GitHub Source Code &bull; C &amp; Python Projects</div>
+                        </div>
+                    </div>
+                    <div class="file-actions-row">
+                        <a href="../files/project.zip" download class="btn btn-primary btn-sm">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            download_zip()
+                        </a>
+                    </div>
+                </div>
+
+                <hr class="blog-divider" />
+
+                <h2 id="images-section" class="blog-h2">৫. ছবির নানা রকম পজিশনিং ও লেআউট (Left Float, Right Float, Gallery)</h2>
+                
+                <h3 class="blog-h3">পজিশন ক: বামে ছবি ও ডানে লেখা (Left Float with Text Wrap)</h3>
+                <div class="img-wrap-float-left">
+                    <img src="../images/profile/adibp.jpg" alt="Left Float Preview" />
+                    <span class="blog-caption">// বামে ছবি, চারপাশে লেখা প্রবাহিত হবে</span>
+                </div>
+                <p>এই প্যারাগ্রাফের লেখাগুলো ছবির ডানপাশ দিয়ে প্রবাহিত হয়ে সুন্দরভাবে নিচে নেমে যাবে। ম্যাগাজিন বা পত্রিকার মতো ব্লগের সৌন্দর্য বহুগুণে বৃদ্ধি পায় যখন ছবি ও লেখার এমন মেলবন্ধন থাকে। মোবাইল স্ক্রিনে স্বয়ংক্রিয়ভাবে ছবিটি পুরো প্রস্থ নিয়ে নিবে।</p>
+                <div style="clear:both;"></div>
+
+                <h3 class="blog-h3">পজিশন খ: পাশাপাশি ২টি ছবির গ্যালারি (2-Column Grid)</h3>
+                <div class="img-grid-2">
+                    <div>
+                        <img src="../images/profile/adibp.jpg" alt="Photo 1" />
+                        <span class="blog-caption">// ক্যাম্পাস লাইব্রেরি স্টাডি সেশন</span>
+                    </div>
+                    <div>
+                        <img src="../images/profile/adib.jpg" alt="Photo 2" />
+                        <span class="blog-caption">// ল্যাবে প্রোগ্রামিং ওয়ার্কশপ</span>
+                    </div>
+                </div>
+
+                <hr class="blog-divider" />
+
+                <h2 id="callouts-section" class="blog-h2">৬. বিশেষ কোটেশন, টিপস ও হাইলাইট মার্কার</h2>
+                
+                <div class="callout-box">
+                    <strong>// টিপস:</strong> আপনার লেখার মূল ভাবনাগুলো এরকম সবুজ টিপস বক্সে হাইলাইট করতে পারেন।
+                </div>
+
+                <div class="callout-box info">
+                    <strong>// গুরুত্বপূর্ণ তথ্য:</strong> প্রযুক্তি বা পড়াশোনার স্পেশাল ইনফো দেওয়ার জন্য সিয়ান ইনফো বক্স।
+                </div>
+
+                <div class="callout-box warning">
+                    <strong>// সতর্কতা বা নোট:</strong> কোনো ভুল এড়ানো বা পরীক্ষার জরুরি সতর্কবার্তা জানাতে অ্যাম্বার বক্স।
+                </div>
+
+                <p>লেখার ভেতরে <span class="hl-green">নিয়মমাফিক কোডিং</span>, <span class="hl-cyan">স্মার্ট সিস্টেম ডিজাইন</span> কিংবা <span class="hl-yellow">বিজ্ঞানের গভীর সূত্র</span> এভাবে মার্কার দিয়ে হাইলাইট করা যায়।</p>
             </div>
 
             <!-- 6. Reaction Bar & Share Buttons -->
