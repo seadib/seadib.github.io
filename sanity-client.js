@@ -204,7 +204,7 @@ export function renderPortableText(body) {
 
 // 4. Query Helper Functions
 export async function fetchAllPosts() {
-  const query = `*[_type == "post"] | order(publishedAt desc) {
+  const query = `*[_type == "post" && !(_id in path("drafts.**"))] | order(publishedAt desc) {
     title,
     "slug": slug.current,
     publishedAt,
@@ -219,7 +219,7 @@ export async function fetchAllPosts() {
 }
 
 export async function fetchPostBySlug(slug) {
-  const query = `*[_type == "post" && slug.current == $slug][0] {
+  const query = `*[_type == "post" && slug.current == $slug && !(_id in path("drafts.**"))][0] {
     title,
     "slug": slug.current,
     publishedAt,
@@ -235,35 +235,35 @@ export async function fetchPostBySlug(slug) {
 }
 
 export async function fetchSiteSettings() {
-  return await sanityClient.fetch(`*[_type == "siteSettings"][0]`);
+  return await sanityClient.fetch(`*[_type == "siteSettings" && !(_id in path("drafts.**"))][0]`);
 }
 
 export async function fetchHomePage() {
-  return await sanityClient.fetch(`*[_type == "homePage"][0]`);
+  return await sanityClient.fetch(`*[_type == "homePage" && !(_id in path("drafts.**"))][0]`);
 }
 
 export async function fetchAboutPage() {
-  return await sanityClient.fetch(`*[_type == "aboutPage"][0]`);
+  return await sanityClient.fetch(`*[_type == "aboutPage" && !(_id in path("drafts.**"))][0]`);
 }
 
 export async function fetchProjects() {
-  return await sanityClient.fetch(`*[_type == "project"] | order(order asc, _createdAt asc)`);
+  return await sanityClient.fetch(`*[_type == "project" && !(_id in path("drafts.**"))] | order(order asc, _createdAt asc)`);
 }
 
 export async function fetchSkills() {
-  return await sanityClient.fetch(`*[_type == "skillCategory"] | order(order asc)`);
+  return await sanityClient.fetch(`*[_type == "skillCategory" && !(_id in path("drafts.**"))] | order(order asc)`);
 }
 
 export async function fetchAchievements() {
-  return await sanityClient.fetch(`*[_type == "achievement"] | order(order asc, yearBadge desc)`);
+  return await sanityClient.fetch(`*[_type == "achievement" && !(_id in path("drafts.**"))] | order(order asc, yearBadge desc)`);
 }
 
 export async function fetchContactPage() {
-  return await sanityClient.fetch(`*[_type == "contactPage"][0]`);
+  return await sanityClient.fetch(`*[_type == "contactPage" && !(_id in path("drafts.**"))][0]`);
 }
 
 export async function fetchDhakaCollegeHub() {
-  return await sanityClient.fetch(`*[_type == "dhakaCollegeHub"][0]`);
+  return await sanityClient.fetch(`*[_type == "dhakaCollegeHub" && !(_id in path("drafts.**"))][0]`);
 }
 
 // 5. Full-Site Progressive Hydration Functions
@@ -368,7 +368,7 @@ export async function hydrateHomePage() {
           const dark = getSanityImageUrl(p.darkImage) || p.darkImageUrlFallback || 'images/projects/n-dcsc.png';
           const light = getSanityImageUrl(p.lightImage) || p.lightImageUrlFallback || dark;
           return `
-            <div class="project-card stagger-item" data-url="${p.liveUrl || '#'}" data-name="${p.title}">
+            <div class="project-card visible" style="opacity:1; transform:none;" data-url="${p.liveUrl || '#'}" data-name="${p.title}">
                 <div class="browser-bar">
                     <div class="browser-dots">
                         <span class="browser-dot r"></span>
@@ -394,6 +394,7 @@ export async function hydrateHomePage() {
             </div>
           `;
         }).join('');
+        if (window.reobserveStaggerItems) window.reobserveStaggerItems();
       }
     }
   } catch (err) {
@@ -451,7 +452,7 @@ export async function hydrateProjectsPage() {
         const dark = getSanityImageUrl(p.darkImage) || p.darkImageUrlFallback || 'images/projects/n-dcsc.png';
         const light = getSanityImageUrl(p.lightImage) || p.lightImageUrlFallback || dark;
         return `
-          <div class="project-card stagger-item" data-url="${p.liveUrl || '#'}" data-name="${p.title}" data-category="${p.category || 'web'}">
+          <div class="project-card visible" style="opacity:1; transform:none;" data-url="${p.liveUrl || '#'}" data-name="${p.title}" data-category="${p.category || 'web'}">
               <div class="browser-bar">
                   <div class="browser-dots">
                       <span class="browser-dot r"></span>
@@ -477,6 +478,7 @@ export async function hydrateProjectsPage() {
           </div>
         `;
       }).join('');
+      if (window.reobserveStaggerItems) window.reobserveStaggerItems();
     }
   } catch (err) {
     console.debug('[Sanity] Projects page hydration skipped:', err);
@@ -498,7 +500,7 @@ export async function hydrateAchievementsPage() {
         const photosJson = JSON.stringify(a.photos || [thumb]);
         const pointsJson = JSON.stringify(a.bulletPoints || []);
         return `
-          <div class="achievement-card stagger-item"
+          <div class="achievement-card visible" style="opacity:1; transform:none;"
                data-category="${a.category || 'science_club'}"
                data-title="${a.title}"
                data-meta="${a.metaText || ''}"
@@ -524,6 +526,7 @@ export async function hydrateAchievementsPage() {
           </div>
         `;
       }).join('');
+      if (window.reobserveStaggerItems) window.reobserveStaggerItems();
     }
   } catch (err) {
     console.debug('[Sanity] Achievements page hydration skipped:', err);

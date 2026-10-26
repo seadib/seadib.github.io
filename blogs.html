@@ -14,7 +14,7 @@
     <meta property="og:site_name" content="SE ADIB" />
     <meta property="og:title" content="Blogs &amp; Articles — SE ADIB (Abdullah Al Adib)" /><meta property="og:description" content="Chronological blogs, articles, journey logs, and resources by SE Adib." /><meta property="og:url" content="https://adi.pro.bd/blogs.html" /><meta property="og:image" content="https://adi.pro.bd/images/profile/adib.jpg" />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+Bengali:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/style.css?v=3.8" />
+    <link rel="stylesheet" href="css/style.css?v=4.0" />
     <!-- Structured Data for Search Engines (JSON-LD) -->
     <script type="application/ld+json">
     {
@@ -88,6 +88,7 @@
             <button class="filter-btn" data-filter="dhaka_college">dhaka_college</button>
             <button class="filter-btn" data-filter="tech">tech</button>
             <button class="filter-btn" data-filter="literature">literature</button>
+            <button class="filter-btn" data-filter="personal">personal</button>
         </div>
 
         <div class="grid-2" id="blogGrid">
@@ -255,7 +256,7 @@
                                       `<span class="achievement-badge-overlay">${(post.category || 'Article').toUpperCase()}</span>`;
                         const date = post.publishedAt ? new Date(post.publishedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }) : 'Oct 2026';
                         return `
-                        <a href="blog-view.html?slug=${post.slug}" class="blog-post-card stagger-item" data-category="${post.category || 'journey'}">
+                        <a href="blog-view.html?slug=${post.slug}" class="blog-post-card visible" style="opacity:1; transform:none;" data-category="${post.category || 'journey'}">
                             <div class="blog-post-thumb-wrap">
                                 <img src="${cover}" alt="${post.title}" class="blog-post-thumb" />
                                 ${badge}
@@ -277,8 +278,9 @@
                         `;
                     }).join('');
 
-                    // Inject Sanity posts into grid
-                    blogGrid.insertAdjacentHTML('afterbegin', sanityCardsHtml);
+                    // Replace blogGrid with live Sanity posts
+                    blogGrid.innerHTML = sanityCardsHtml;
+                    if (window.reobserveStaggerItems) window.reobserveStaggerItems();
                 }
             } catch (e) {
                 console.log('Sanity blogs not loaded yet, using static fallback:', e.message);

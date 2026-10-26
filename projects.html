@@ -14,7 +14,7 @@
     <meta property="og:site_name" content="SE ADIB" />
     <meta property="og:title" content="Projects — SE ADIB (SE ADIB)" /><meta property="og:description" content="Projects built by SE Adib — Dhaka College Science Club, Hall Website, Personal Blog, Dr Sahitto, Course Link." /><meta property="og:url" content="https://adi.pro.bd/projects.html" /><meta property="og:image" content="https://adi.pro.bd/images/profile/adib.jpg" />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/style.css?v=3.4" />
+    <link rel="stylesheet" href="css/style.css?v=4.0" />
     <!-- Structured Data for Search Engines (JSON-LD) -->
     <script type="application/ld+json">
     {
@@ -284,18 +284,6 @@
     </footer>
     <div class="modal-overlay" id="projectModal"><div class="modal-box"><p id="modalMessage"></p><div class="modal-buttons"><button class="btn btn-outline btn-sm" id="modalCancel">cancel</button><button class="btn btn-primary btn-sm" id="modalVisit">visit()</button></div></div></div>
     <script src="scrips/script.js"></script>
-    <script>
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const f = btn.dataset.filter;
-                document.querySelectorAll('.project-card').forEach(c => {
-                    c.style.display = (f === 'all' || c.dataset.category === f) ? '' : 'none';
-                });
-            });
-        });
-    </script>
     <script type="module" src="sanity-client.js"></script>
 </body>
 </html>

@@ -191,12 +191,21 @@
   /* ---- Modals ---- */
   function setupModal(sel, mId, msgId, vId, cId, defUrl) {
     const m = document.getElementById(mId), msg = document.getElementById(msgId), vBtn = document.getElementById(vId), cBtn = document.getElementById(cId);
-    if (!m || !vBtn || !cBtn) return; let url = '';
-    document.querySelectorAll(sel).forEach(c => c.addEventListener('click', e => {
-      if (e.target.tagName === 'A') return; url = c.dataset.url || defUrl || ''; if (!url) return;
-      if (msg) msg.textContent = 'Visit ' + (c.dataset.name || url) + '?'; m.classList.add('show');
-    }));
-    vBtn.addEventListener('click', () => { if (url) window.open(url, '_blank'); m.classList.remove('show'); });
+    if (!m || !vBtn || !cBtn) return;
+    document.addEventListener('click', e => {
+      const c = e.target.closest(sel);
+      if (!c || e.target.tagName === 'A' || e.target.closest('a')) return;
+      const url = c.dataset.url || defUrl || '';
+      if (!url) return;
+      if (msg) msg.textContent = 'Visit ' + (c.dataset.name || url) + '?';
+      m.classList.add('show');
+      m.dataset.targetUrl = url;
+    });
+    vBtn.addEventListener('click', () => {
+      const url = m.dataset.targetUrl || defUrl;
+      if (url) window.open(url, '_blank');
+      m.classList.remove('show');
+    });
     cBtn.addEventListener('click', () => m.classList.remove('show'));
     m.addEventListener('click', e => { if (e.target === m) m.classList.remove('show'); });
   }
@@ -217,7 +226,9 @@
           if (!card.dataset.category) return;
           if (filter === 'all' || card.dataset.category === filter) {
             card.style.display = '';
-            card.classList.add('fade-in');
+            card.classList.add('visible');
+            card.style.opacity = '1';
+            card.style.transform = 'none';
           } else {
             card.style.display = 'none';
           }
@@ -225,6 +236,14 @@
       });
     });
   }
+
+  window.reobserveStaggerItems = function() {
+    document.querySelectorAll('.project-card, .blog-post-card, .achievement-card').forEach(el => {
+      el.classList.add('visible');
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    });
+  };
 
   /* ---- Achievement Modal ---- */
   const achModal = document.getElementById('achievementModal');
