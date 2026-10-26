@@ -131,34 +131,36 @@
   }, { threshold: 0.5 });
   document.querySelectorAll('.stat-number').forEach(el => cObs.observe(el));
 
-  /* ---- Real Global Visitor Counter (hits.sh + Local Cache & Base Offset) ---- */
+  /* ---- Real Global Visitor Counter (Unique Session Cooldown) ---- */
   const vEl = document.querySelector('.visitor-count');
   if (vEl) {
     const baseOffset = 52;
-    let cached = localStorage.getItem('global_vc');
+    const cached = localStorage.getItem('global_vc');
+    const hasVisitedThisSession = sessionStorage.getItem('visited_session');
+
     let initialCount = cached ? parseInt(cached, 10) : 53;
     vEl.setAttribute('data-target', initialCount);
 
-    fetch('https://hits.sh/adi.pro.bd.svg')
-      .then(res => res.text())
-      .then(svgText => {
-        const match = svgText.match(/aria-label="hits:\s*(\d+)"/);
-        if (match && match[1]) {
-          const hits = parseInt(match[1], 10);
-          const liveTotal = hits + baseOffset;
-          localStorage.setItem('global_vc', liveTotal);
-          vEl.setAttribute('data-target', liveTotal);
-          if (vEl.textContent !== '0' && vEl.textContent !== '') {
-            vEl.textContent = liveTotal;
+    if (!hasVisitedThisSession) {
+      fetch('https://hits.sh/seadib.pro.bd.svg')
+        .then(res => res.text())
+        .then(svgText => {
+          const match = svgText.match(/aria-label="hits:\s*(\d+)"/);
+          if (match && match[1]) {
+            const hits = parseInt(match[1], 10);
+            const liveTotal = hits + baseOffset;
+            localStorage.setItem('global_vc', liveTotal);
+            sessionStorage.setItem('visited_session', 'true');
+            vEl.setAttribute('data-target', liveTotal);
+            if (vEl.textContent !== '0' && vEl.textContent !== '') {
+              vEl.textContent = liveTotal;
+            }
           }
-        }
-      })
-      .catch(() => {
-        let local = localStorage.getItem('vc');
-        let count = local ? parseInt(local, 10) + 1 : 53;
-        localStorage.setItem('vc', count);
-        vEl.setAttribute('data-target', count);
-      });
+        })
+        .catch(() => {
+          // Keep existing cached count on failure
+        });
+    }
   }
 
   /* ---- Typing Effect ---- */

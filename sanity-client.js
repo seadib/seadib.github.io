@@ -174,6 +174,8 @@ export const portableTextComponents = {
     hlGreen: ({ children }) => `<span class="hl-green">${children}</span>`,
     hlCyan: ({ children }) => `<span class="hl-cyan">${children}</span>`,
     hlYellow: ({ children }) => `<span class="hl-yellow">${children}</span>`,
+    underline: ({ children }) => `<span style="text-decoration: underline;">${children}</span>`,
+    'strike-through': ({ children }) => `<span style="text-decoration: line-through;">${children}</span>`,
     code: ({ children }) => `<code>${children}</code>`,
     link: ({ children, value }) => {
       const target = value?.blank ? ' target="_blank" rel="noopener noreferrer"' : '';
@@ -182,6 +184,11 @@ export const portableTextComponents = {
   },
 
   block: {
+    h1: ({ children }) => {
+      const text = children.toString();
+      const id = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
+      return `<h1 id="${id}" class="blog-h1">${children}</h1>`;
+    },
     h2: ({ children }) => {
       const text = children.toString();
       const id = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
@@ -192,6 +199,12 @@ export const portableTextComponents = {
       const id = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
       return `<h3 id="${id}" class="blog-h3">${children}</h3>`;
     },
+    h4: ({ children }) => {
+      const text = children.toString();
+      const id = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
+      return `<h4 id="${id}" class="blog-h4">${children}</h4>`;
+    },
+    lead: ({ children }) => `<p class="blog-lead" style="font-size:1.15rem; line-height:1.8; color:var(--text); font-weight:500;">${children}</p>`,
     blockquote: ({ children }) => `<blockquote class="blog-quote">${children}</blockquote>`,
     normal: ({ children }) => `<p>${children}</p>`,
   },
@@ -212,6 +225,7 @@ export async function fetchAllPosts() {
     readingTime,
     isFeatured,
     summary,
+    fontFamily,
     "coverImageUrl": coverImage.asset->url,
     "author": author->{ name, role, "avatarUrl": avatar.asset->url }
   }`;
@@ -227,6 +241,7 @@ export async function fetchPostBySlug(slug) {
     readingTime,
     isFeatured,
     summary,
+    fontFamily,
     "coverImageUrl": coverImage.asset->url,
     "author": author->{ name, role, "avatarUrl": avatar.asset->url },
     body
@@ -428,13 +443,132 @@ export async function hydrateAboutPage() {
       const nameEl = document.querySelector('.about-text h2');
       if (nameEl && b.name) nameEl.textContent = b.name;
 
+      // Tagline
+      if (b.tagline) {
+        const taglineEl = document.querySelector('.about-text > div:first-of-type');
+        if (taglineEl) taglineEl.textContent = b.tagline;
+      }
+
+      // Bio Paragraphs
+      if (b.paragraphs && b.paragraphs.length > 0) {
+        const aboutText = document.querySelector('.about-text');
+        if (aboutText) {
+          // Remove old static paragraphs
+          aboutText.querySelectorAll('p').forEach(p => p.remove());
+
+          // Find the goal div or buttons wrapper to insert paragraphs before
+          const refEl = Array.from(aboutText.children).find(el => el.textContent && el.textContent.includes('goal =')) || aboutText.querySelector('div:last-of-type');
+
+          b.paragraphs.forEach(pText => {
+            const p = document.createElement('p');
+            p.textContent = pText;
+            if (refEl) {
+              aboutText.insertBefore(p, refEl);
+            } else {
+              aboutText.appendChild(p);
+            }
+          });
+        }
+      }
+
+      // Goal Code Snippet
+      if (b.goalCode) {
+        const goalEl = Array.from(document.querySelectorAll('.about-text > div')).find(el => el.textContent && el.textContent.includes('goal ='));
+        if (goalEl) goalEl.textContent = b.goalCode;
+      }
+
+      // CV Download Button
       const cvBtn = document.querySelector('.about-text a[download]');
       if (cvBtn && (b.cvUrlFallback || b.cvFile)) {
         cvBtn.href = b.cvUrlFallback || 'files/adib.pdf';
       }
     }
+
+    // Education History
+    if (data.education && data.education.length > 0) {
+      const eduGrid = document.querySelector('#education .grid-2');
+      if (eduGrid) {
+        eduGrid.innerHTML = data.education.map(edu => `
+          <div class="info-card visible" style="opacity:1; transform:none;">
+              <h4><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>${edu.institution || ''}</h4>
+              <ul>
+                  <li><strong>${edu.degree || ''}</strong></li>
+                  <li>${edu.batch || ''}</li>
+                  <li>${edu.details || ''}</li>
+              </ul>
+          </div>
+        `).join('');
+      }
+    }
+
+    // Focus Areas (What I Do)
+    if (data.focusAreas && data.focusAreas.length > 0) {
+      const focusGrid = document.querySelector('#services .grid-3');
+      if (focusGrid) {
+        const icons = {
+          web: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" style="margin:0 auto 10px;"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`,
+          writing: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" style="margin:0 auto 10px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`,
+          ai: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" style="margin:0 auto 10px;"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="15" x2="8" y2="17"/><line x1="16" y1="15" x2="16" y2="17"/></svg>`
+        };
+        focusGrid.innerHTML = data.focusAreas.map(f => `
+          <div class="info-card visible" style="text-align:center; opacity:1; transform:none;">
+              ${icons[f.iconType] || icons.web}
+              <h4 style="justify-content:center;">${f.title || ''}</h4>
+              <p>${f.description || ''}</p>
+          </div>
+        `).join('');
+      }
+    }
   } catch (err) {
     console.debug('[Sanity] About page hydration skipped:', err);
+  }
+}
+
+/**
+ * Hydrates Contact Page (contact.html)
+ */
+export async function hydrateContactPage() {
+  try {
+    const data = await fetchContactPage();
+    if (!data) return;
+
+    if (data.title) {
+      const h1 = document.querySelector('.page-header h1');
+      if (h1) h1.innerHTML = `&lt;<span class="accent">${data.title.replace(/[<>]/g, '')}</span>&gt;`;
+    }
+    if (data.subtitle) {
+      const p = document.querySelector('.page-header p');
+      if (p) p.textContent = data.subtitle;
+    }
+
+    if (data.codeCard) {
+      const c = data.codeCard;
+      const title = document.querySelector('.code-title');
+      if (title && c.fileName) title.textContent = c.fileName;
+
+      const codeBody = document.querySelector('.code-body');
+      if (codeBody) {
+        codeBody.innerHTML = `
+          <div><span class="punctuation">{</span></div>
+          <div>  <span class="property">"name"</span><span class="punctuation">:</span> <span class="string">"${c.name || 'Abdullah Al Adib'}"</span><span class="punctuation">,</span></div>
+          <div>  <span class="property">"email"</span><span class="punctuation">:</span> <span class="string">"${c.email || 'drseadib@gmail.com'}"</span><span class="punctuation">,</span></div>
+          <div>  <span class="property">"facebook"</span><span class="punctuation">:</span> <span class="string">"${c.facebook || 'facebook.com/seadix'}"</span><span class="punctuation">,</span></div>
+          <div>  <span class="property">"whatsapp"</span><span class="punctuation">:</span> <span class="string">"${c.whatsapp || 'wa.me/seadib'}"</span><span class="punctuation">,</span></div>
+          <div>  <span class="property">"telegram"</span><span class="punctuation">:</span> <span class="string">"${c.telegram || 't.me/DrSahitto'}"</span><span class="punctuation">,</span></div>
+          <div>  <span class="property">"github"</span><span class="punctuation">:</span> <span class="string">"${c.github || 'github.com/seadib'}"</span><span class="punctuation">,</span></div>
+          <div>  <span class="property">"location"</span><span class="punctuation">:</span> <span class="string">"${c.location || 'Bangladesh'}"</span><span class="punctuation">,</span></div>
+          <div>  <span class="property">"college"</span><span class="punctuation">:</span> <span class="string">"${c.college || 'Dhaka College'}"</span></div>
+          <div><span class="punctuation">}</span></div>
+        `;
+      }
+    }
+
+    if (data.web3FormsAccessKey) {
+      const input = document.querySelector('form input[name="access_key"]');
+      if (input) input.value = data.web3FormsAccessKey;
+    }
+  } catch (err) {
+    console.debug('[Sanity] Contact page hydration skipped:', err);
   }
 }
 
@@ -551,6 +685,8 @@ export async function autoHydrateCurrentPage() {
       await hydrateProjectsPage();
     } else if (path.includes('achievements.html')) {
       await hydrateAchievementsPage();
+    } else if (path.includes('contact.html')) {
+      await hydrateContactPage();
     }
   } catch (err) {
     console.debug('[Sanity CMS] Progressive hydration completed with fallback.', err);
