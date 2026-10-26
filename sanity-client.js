@@ -177,6 +177,22 @@ export const portableTextComponents = {
     underline: ({ children }) => `<span style="text-decoration: underline;">${children}</span>`,
     'strike-through': ({ children }) => `<span style="text-decoration: line-through;">${children}</span>`,
     code: ({ children }) => `<code>${children}</code>`,
+    fontStyle: ({ children, value }) => {
+      const font = value?.font || 'inherit';
+      return `<span style="font-family: '${font}', var(--font-main), sans-serif;">${children}</span>`;
+    },
+    textColor: ({ children, value }) => {
+      const color = value?.customColor || value?.color || 'inherit';
+      return `<span style="color: ${color};">${children}</span>`;
+    },
+    bgColor: ({ children, value }) => {
+      const bg = value?.customBg || value?.bg || 'transparent';
+      return `<span style="background-color: ${bg}; padding: 2px 6px; border-radius: 4px; display: inline;">${children}</span>`;
+    },
+    textSize: ({ children, value }) => {
+      const size = value?.size || '1rem';
+      return `<span style="font-size: ${size};">${children}</span>`;
+    },
     link: ({ children, value }) => {
       const target = value?.blank ? ' target="_blank" rel="noopener noreferrer"' : '';
       return `<a href="${value?.href || '#'}"${target}>${children}</a>`;
