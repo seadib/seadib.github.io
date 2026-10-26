@@ -42,7 +42,7 @@
         <div class="page-header"><h1>&lt;<span class="accent">contact</span>&gt;</h1><p>get in touch with Abdullah Al Adib</p></div>
 
         <section>
-                        <div class="grid-2" style="align-items:start;">
+                                    <div class="grid-2" style="align-items:start;">
                 <!-- Left Column: JSON Code Terminal & Social Shortcut Links -->
                 <div class="fade-in">
                     <div class="code-window">
@@ -119,42 +119,24 @@
                     </div>
                 </div>
 
-                <!-- Right Column: Symmetrically Leveled Contact Card -->
+                <!-- Right Column: Original Direct Form Leveled with Code Window -->
                 <div class="fade-in">
-                    <div class="contact-card">
-                        <div class="code-header">
-                            <span class="code-dot red"></span><span class="code-dot yellow"></span><span class="code-dot green"></span>
-                            <span class="code-title">send_message.sh</span>
-                        </div>
-                        <div class="contact-form-body">
-                            <form class="contact-form" id="contactForm">
-                                <input type="hidden" name="access_key" value="02b89c0d-9b17-49dd-bd02-ee2c1dee8a9d" />
-                                <div style="margin-bottom:14px;">
-                                    <input type="text" name="name" placeholder="your_name" required class="stagger-item" style="width:100%;margin-bottom:0;" />
-                                </div>
-                                <div style="margin-bottom:14px;">
-                                    <input type="email" name="email" placeholder="your_email" required class="stagger-item" style="width:100%;margin-bottom:0;" />
-                                </div>
-                                <div style="margin-bottom:14px;">
-                                    <textarea rows="5" name="message" placeholder="your_message (write brief, project idea, or query...)" required class="stagger-item" style="width:100%;min-height:125px;resize:vertical;margin-bottom:0;"></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-primary stagger-item" style="width:100%;justify-content:center;">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-                                    send_message()
-                                </button>
-                            </form>
-                            <div id="formResult"></div>
-                            <div class="contact-guarantee">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                                <span>Fast response &bull; Direct delivery via Web3Forms API</span>
-                            </div>
-                        </div>
-                    </div>
+                    <form class="contact-form" id="contactForm">
+                        <input type="hidden" name="access_key" value="02b89c0d-9b17-49dd-bd02-ee2c1dee8a9d" />
+                        <input type="text" name="name" placeholder="your_name" required class="stagger-item" />
+                        <input type="email" name="email" placeholder="your_email" required class="stagger-item" />
+                        <textarea rows="6" name="message" placeholder="your_message" required class="stagger-item" style="min-height:155px;resize:vertical;"></textarea>
+                        <button type="submit" class="btn btn-primary stagger-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                            send_message()
+                        </button>
+                    </form>
+                    <div id="formResult"></div>
                 </div>
             </div>
         </section>
     </div>
-        <footer class="footer">
+            <footer class="footer">
         <div class="footer-inner">
             <!-- Col 1: Brand & Professional Description & Connect Icons -->
             <div class="footer-brand">
@@ -188,8 +170,8 @@
                 </div>
             </div>
 
-            <!-- Col 2: Navigation Links -->
-            <div class="footer-links-col">
+            <!-- Col 2: Navigation Links (Shifted right on laptop via .footer-col-nav) -->
+            <div class="footer-links-col footer-col-nav">
                 <div class="footer-heading">// navigation</div>
                 <div class="footer-nav-col">
                     <a href="index.html">home</a>

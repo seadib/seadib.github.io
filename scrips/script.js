@@ -131,17 +131,34 @@
   }, { threshold: 0.5 });
   document.querySelectorAll('.stat-number').forEach(el => cObs.observe(el));
 
-  /* ---- Visitor Count (Unique Session Tracking) ---- */
+  /* ---- Real Global Visitor Counter (hits.sh + Local Cache & Base Offset) ---- */
   const vEl = document.querySelector('.visitor-count');
   if (vEl) {
-    let v = localStorage.getItem('vc');
-    let count = v ? parseInt(v, 10) : 53;
-    if (!sessionStorage.getItem('adib_session_visited')) {
-      count++;
-      localStorage.setItem('vc', count);
-      sessionStorage.setItem('adib_session_visited', '1');
-    }
-    vEl.setAttribute('data-target', count);
+    const baseOffset = 52;
+    let cached = localStorage.getItem('global_vc');
+    let initialCount = cached ? parseInt(cached, 10) : 53;
+    vEl.setAttribute('data-target', initialCount);
+
+    fetch('https://hits.sh/adi.pro.bd.svg')
+      .then(res => res.text())
+      .then(svgText => {
+        const match = svgText.match(/aria-label="hits:\s*(\d+)"/);
+        if (match && match[1]) {
+          const hits = parseInt(match[1], 10);
+          const liveTotal = hits + baseOffset;
+          localStorage.setItem('global_vc', liveTotal);
+          vEl.setAttribute('data-target', liveTotal);
+          if (vEl.textContent !== '0' && vEl.textContent !== '') {
+            vEl.textContent = liveTotal;
+          }
+        }
+      })
+      .catch(() => {
+        let local = localStorage.getItem('vc');
+        let count = local ? parseInt(local, 10) + 1 : 53;
+        localStorage.setItem('vc', count);
+        vEl.setAttribute('data-target', count);
+      });
   }
 
   /* ---- Typing Effect ---- */
