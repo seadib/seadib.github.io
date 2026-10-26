@@ -241,5 +241,50 @@
         </div>
     </footer>
     <script src="scrips/script.js"></script>
+    <script type="module">
+        import { fetchAllPosts } from './sanity-client.js';
+
+        async function loadSanityBlogs() {
+            try {
+                const posts = await fetchAllPosts();
+                if (posts && posts.length > 0) {
+                    const blogGrid = document.getElementById('blogGrid');
+                    const sanityCardsHtml = posts.map(post => {
+                        const cover = post.coverImageUrl || 'images/profile/adibp.jpg';
+                        const badge = post.isFeatured ? '<span class="achievement-badge-overlay" style="border-color:var(--cyan);color:var(--cyan);">Featured</span>' :
+                                      `<span class="achievement-badge-overlay">${(post.category || 'Article').toUpperCase()}</span>`;
+                        const date = post.publishedAt ? new Date(post.publishedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }) : 'Oct 2026';
+                        return `
+                        <a href="blog-view.html?slug=${post.slug}" class="blog-post-card stagger-item" data-category="${post.category || 'journey'}">
+                            <div class="blog-post-thumb-wrap">
+                                <img src="${cover}" alt="${post.title}" class="blog-post-thumb" />
+                                ${badge}
+                            </div>
+                            <div class="blog-post-body">
+                                <div class="blog-post-meta">
+                                    <span style="color:var(--green); font-family:var(--font-mono); font-size:0.75rem;">// ${date}</span>
+                                    <span>• ${post.readingTime || '5 min read'}</span>
+                                    ${post.author?.name ? `<span>• ${post.author.name}</span>` : ''}
+                                </div>
+                                <div class="blog-post-title">${post.title}</div>
+                                <p class="blog-post-excerpt">${post.summary || ''}</p>
+                                <div class="blog-post-footer">
+                                    <span class="tag">${post.category || 'article'}</span>
+                                    <span class="btn btn-outline btn-sm">read_article() ↗</span>
+                                </div>
+                            </div>
+                        </a>
+                        `;
+                    }).join('');
+
+                    // Inject Sanity posts into grid
+                    blogGrid.insertAdjacentHTML('afterbegin', sanityCardsHtml);
+                }
+            } catch (e) {
+                console.log('Sanity blogs not loaded yet, using static fallback:', e.message);
+            }
+        }
+        loadSanityBlogs();
+    </script>
 </body>
 </html>
