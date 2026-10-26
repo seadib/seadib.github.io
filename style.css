@@ -503,6 +503,126 @@ section{padding:70px 0}
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
+  /* Mobile Navigation Toggle & Drawer */
+  .nav-toggle {
+    display: flex !important;
+  }
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-top: none;
+    padding: 16px;
+    flex-direction: column;
+    gap: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: var(--transition);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    z-index: 9999;
+  }
+  .nav-links.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    display: flex !important;
+  }
+  .nav-link {
+    padding: 12px 16px;
+    width: 100%;
+  }
+  .mega-menu {
+    position: static;
+    transform: none;
+    width: 100%;
+    grid-template-columns: 1fr;
+    display: none;
+    padding: 14px;
+    border: 1px solid var(--border);
+    margin-top: 6px;
+  }
+  .nav-item.open .mega-menu {
+    display: grid;
+  }
+
+  /* Hero & Layout Elements */
+  .hero-top {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 24px;
+  }
+  .hero-code {
+    width: 100%;
+    text-align: left !important;
+  }
+  .code-window {
+    text-align: left !important;
+    width: 100%;
+  }
+  .code-body {
+    padding: 16px 14px;
+    font-size: 0.78rem;
+    line-height: 1.75;
+    text-align: left !important;
+  }
+  .code-body > div {
+    text-align: left !important;
+  }
+  .hero-avatar-wrap {
+    width: 160px;
+    height: 160px;
+  }
+  .hero-cta {
+    justify-content: center;
+  }
+  .hero-desc {
+    margin: 16px auto 0;
+  }
+  .stats-row {
+    flex-direction: column;
+  }
+
+  /* Responsive Grids (Full width 1-column on mobile) */
+  .grid-2,
+  .dc-hub-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .grid-3 {
+    grid-template-columns: 1fr !important;
+  }
+  .grid-4 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Other Sections */
+  .about-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-avatar {
+    width: 150px;
+    height: 150px;
+  }
+  .profile-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .section-title span {
+    font-size: 1.3rem;
+  }
+  .theme-toggle {
+    bottom: 18px;
+    right: 18px;
+    width: 42px;
+    height: 42px;
+  }
+
+  /* Contact Links */
   .contact-links {
     grid-template-columns: repeat(4, 1fr) !important;
     gap: 8px !important;
@@ -513,6 +633,8 @@ section{padding:70px 0}
   .contact-links a {
     padding: 10px 0 !important;
   }
+
+  /* Footer (2-column navigation on mobile) */
   .footer {
     margin-top: 50px;
     padding: 36px 18px 80px;
@@ -572,18 +694,43 @@ section{padding:70px 0}
     margin-top: 30px;
   }
 }
-  .theme-toggle{bottom:18px;right:18px;width:42px;height:42px}
-}
-@media(max-width:480px){
-  .hero-text h1{font-size:1.9rem}
-  .grid-3,.grid-4{grid-template-columns:1fr}
-  .code-body{padding:14px 10px;font-size:0.73rem;line-height:1.65}
-  .code-body .line-num{margin-right:8px;width:14px;font-size:0.7rem}
-  .tech-grid{grid-template-columns:repeat(2,1fr)}
-  .filter-bar{justify-content:center}
-  .footer-social-row{gap:8px}
-  .footer-social-link{width:36px;height:36px}
-  .footer-social-link svg{width:16px;height:16px}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 1.9rem;
+  }
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr !important;
+  }
+  .code-body {
+    padding: 14px 10px;
+    font-size: 0.73rem;
+    line-height: 1.65;
+  }
+  .code-body .line-num {
+    margin-right: 8px;
+    width: 14px;
+    font-size: 0.7rem;
+  }
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .filter-bar {
+    justify-content: center;
+  }
+  .footer-social-row {
+    gap: 8px;
+  }
+  .footer-social-link {
+    width: 36px;
+    height: 36px;
+  }
+  .footer-social-link svg {
+    width: 16px;
+    height: 16px;
+  }
 }
 /* ---- Code Window Desktop vs Mobile View ---- */
 .code-mobile { display: none !important; }
@@ -2045,31 +2192,6 @@ section{padding:70px 0}
   color: var(--text3);
   font-style: italic;
 }
-
-/* Mobile & Tablet Overrides */
-@media (max-width: 768px) {
-  .contact-links {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 10px;
-  }
-  .footer-inner {
-    grid-template-columns: 1fr;
-    gap: 30px;
-    text-align: left;
-  }
-  .footer-nav-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 8px 24px;
-    max-width: 320px;
-  }
-  .footer-bottom {
-    flex-direction: column;
-    text-align: center;
-    gap: 8px;
-    padding-top: 18px;
-  }
-}
-
 
 /* Shift navigation column rightwards on desktop/laptop */
 @media (min-width: 769px) {
