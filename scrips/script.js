@@ -177,3 +177,4 @@
   setupModal('.project-card[data-url]', 'projectModal', 'modalMessage', 'modalVisit', 'modalCancel');
   setupModal('.location-card', 'locationModal', 'locationModalMessage', 'locationModalVisit', 'locationModalCancel', null, 'https://www.google.com/maps/place/Hatiya+Island');
 })();
+

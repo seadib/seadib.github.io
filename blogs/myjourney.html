@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="application-name" content="SE ADIB" /><meta name="apple-mobile-web-app-title" content="SE ADIB" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9YM84ZSWMF"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-9YM84ZSWMF');</script>
+    <meta name="msvalidate.01" content="F3ADCCD43A5041C5EEE1798E6DBE9F49" />
+    <meta name="description" content="My Journey into Coding & Technology by SE Adib (Abdullah Al Adib / Adib Halimi) — From early HTML in 2022 to Dhaka College and building real web tools." />
+    <meta name="keywords" content="SE Adib journey, Adib Halimi story, seadib coding journey, Dhaka College student developer, Dr Sahitto" />
+    <meta name="robots" content="index, follow" /><meta name="author" content="SE Adib Halimi" />
+    <title>My Journey into Coding &amp; Technology — SE ADIB</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png" /><link rel="shortcut icon" href="../images/favicon/favicon.ico" /><link rel="manifest" href="../site.webmanifest" />
+    <meta property="og:site_name" content="SE ADIB" />
+    <meta property="og:title" content="My Journey into Coding &amp; Technology — SE ADIB" /><meta property="og:description" content="From first lines of HTML in 2022 to Dhaka College science and building real apps. The story of SE Adib." /><meta property="og:url" content="https://adi.pro.bd/blogs/myjourney.html" /><meta property="og:image" content="https://adi.pro.bd/images/profile/adibp.jpg" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+Bengali:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css?v=3.4" />
+</head>
+<body>
+    <canvas id="matrixCanvas"></canvas><div id="scrollProgress"></div><div class="cursor-glow" id="cursorGlow"></div>
+    <button class="theme-toggle" id="themeToggle" aria-label="Switch theme"><svg viewBox="0 0 24 24" id="themeIcon"><circle cx="12" cy="12" r="5"/></svg></button>
+
+    <nav class="nav" id="mainNav">
+        <div class="nav-inner">
+            <a href="../index.html" class="nav-logo">SE <span class="dim">ADIB</span></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+            <div class="nav-links" id="navLinks">
+                <a href="../index.html" class="nav-link">home</a>
+                <a href="../about.html" class="nav-link">about</a>
+                <a href="../projects.html" class="nav-link">projects</a>
+                <a href="../skills.html" class="nav-link">skills</a>
+                <a href="../achievements.html" class="nav-link">achievements</a>
+                <a href="../blogs.html" class="nav-link active">blogs</a>
+                <div class="nav-item has-mega">
+                    <a href="../blog.html" class="nav-link">dhaka_college</a>
+                    <div class="mega-menu">
+                        <div class="mega-section">
+                            <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>notes</h4>
+                            <a href="../o/chemistry.html">chemistry.html</a>
+                            <a href="../o/math.html">math.html</a>
+                        </div>
+                        <div class="mega-section">
+                            <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>q&amp;a</h4>
+                            <a href="../blog.html#qa">questions</a>
+                            <a href="../blog.html#answers">solutions</a>
+                        </div>
+                        <div class="mega-section">
+                            <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>posts</h4>
+                            <a href="../blog.html#posts">latest</a>
+                            <a href="../blog.html#important">updates</a>
+                        </div>
+                        <div class="mega-section">
+                            <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>links</h4>
+                            <a href="../blog.html#resources">resources</a>
+                            <a href="https://dhakacollegescienceclub.github.io" target="_blank">science_club</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="../contact.html" class="nav-link">contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-wrapper">
+        <article class="article-container">
+            <div class="article-header">
+                <div class="article-breadcrumbs">
+                    <a href="../index.html">home</a>
+                    <span>/</span>
+                    <a href="../blogs.html">blogs</a>
+                    <span>/</span>
+                    <span style="color:var(--text2);">myjourney.html</span>
+                </div>
+                <h1 class="article-title">My Journey into Coding &amp; Technology — From First Lines of HTML to Building for Students</h1>
+                <div class="article-meta-row">
+                    <span><strong style="color:var(--green);">SE Adib Halimi</strong></span>
+                    <span>•</span>
+                    <span>October 2026</span>
+                    <span>•</span>
+                    <span>5 min read</span>
+                    <span>•</span>
+                    <span class="tag">journey</span>
+                </div>
+            </div>
+
+            <img src="../images/profile/adibp.jpg" alt="SE Adib Journey" class="article-hero-image" />
+
+            <div class="article-content">
+                <p>প্রত্যেকটি যাত্রারই একটি সূচনা থাকে। আমার কোডিং ও প্রযুক্তির জগতের যাত্রা শুরু হয়েছিল আজ থেকে প্রায় চার বছর আগে, ২০২২ সালে। তখন কম্পিউটার স্ক্রিনের কালো টার্মিনালে এক লাইন সাধারণ কোড লিখে রান করার অনুভূতিটা ছিল অন্যরকম এক জাদুর মতো।</p>
+
+                <blockquote>
+                    "The journey of a thousand miles begins with a single line of code. For me, that line was written in 2022, and the goal has always been simple: Build the impossible."
+                </blockquote>
+
+                <h2>১. শুরুর দিনগুলো (২০২২ — The Sparks)</h2>
+                <p>২০২২ সালে যখন প্রথম HTML ও CSS শেখা শুরু করি, তখন মূল লক্ষ্য ছিল কেবল নিজের একটি ওয়েবসাইট বানিয়ে ইন্টারনেটে লাইভ দেখা। ধীরে ধীরে কোডের শক্তি বুঝতে শিখলাম। কীভাবে কয়েকটি ট্যাগ আর কালার কোড মিলে একটি পুরো ইন্টারফেস জীবন্ত হয়ে ওঠে—তা আমাকে গভীর কৌতূহলী করে তোলে।</p>
+                <p>সেই কৌতূহল থেকেই জন্ম নেয় <em>seadib</em> এবং পরবর্তীতে <em>seadix</em> আইডেন্টিটি। নিজের শেখা প্রতিটি বিষয় আমি ডায়েরির মতো লিখে রাখতাম ব্লগে।</p>
+
+                <h2>২. সাহিত্য ও প্রযুক্তির মেলবন্ধন (২০২৩ — Dr Sahitto)</h2>
+                <p>প্রোগ্রামিংয়ের পাশাপাশি আমার সবসময় গভীর অনুরাগ ছিল বাংলা সাহিত্যের প্রতি। অনেকেই মনে করেন যারা কোডিং করে তাদের মন যান্ত্রিক হয়ে যায়, কিন্তু আমি বিশ্বাস করি কোডিং হলো লজিক আর সাহিত্য হলো কল্পনা—দুটো মিলেই তৈরি হয় পূর্ণাঙ্গ সৃষ্টিশীলতা।</p>
+                <p>২০২৩ সালে আমি শুরু করি <strong>Dr Sahitto</strong> প্ল্যাটফর্ম। যেখানে গল্প, কবিতা, দর্শন ও চিন্তামূলক প্রবন্ধ প্রকাশের মাধ্যমে প্রযুক্তি এবং সাহিত্যের এক অভূতপূর্ব সেতুবন্ধন গড়ি।</p>
+
+                <h2>৩. ঢাকা কলেজ ও বড় বড় প্রজেক্টের সূচনা (২০২৫-২০২৬)</h2>
+                <p>মাধ্যমিক শেষ করে ঢাকার ঐতিহ্যবাহী <strong>ঢাকা কলেজ (বিজ্ঞান বিভাগ)</strong>-এ ভর্তি হওয়া ছিল আমার জীবনের অন্যতম বড় মোড়। এখানে এসে একদিকে পদার্থবিজ্ঞান, রসায়ন ও উচ্চতর গণিতের গভীর পড়ালেখা, অন্যদিকে নিজের প্রযুক্তিগত দক্ষতা কাজে লাগিয়ে সহপাঠী ও কলেজের জন্য কিছু তৈরি করার আকাঙ্ক্ষা তীব্র হয়।</p>
+                <p>এই সময়েই তৈরি করি:</p>
+                <ul>
+                    <li><strong>ঢাকা কলেজ বিজ্ঞান ক্লাব (DCSC) পোর্টাল:</strong> ক্লাবের সকল নোটিশ, বিজ্ঞান মেলার তথ্য ও মেম্বারদের জন্য অফিসিয়াল রিসোর্স হাব।</li>
+                    <li><strong>DC Hall ওয়েবসাইট:</strong> ঢাকা কলেজের আবাসিক হলের ছাত্রদের সুবিধার জন্য নোটিশ ও ডিরেক্টরি পোর্টাল।</li>
+                    <li><strong>কোর্স লিংক রিসোর্স পোর্টাল:</strong> বন্ধুদের পড়াশোনার সুবিধার্থে সব সাবজেক্টের ক্লাস লিংক ও লেকচার শিট এক জায়গায় পাওয়ার ব্যবস্থা।</li>
+                    <li><strong>ভয়েস টাইপিং ওয়েব অ্যাপ:</strong> বাংলা ও ইংরেজিতে সহজে কথা বলে স্বয়ংক্রিয় টাইপিংয়ের টুল।</li>
+                </ul>
+
+                <h2>৪. আমার ব্যক্তিগত ফাইল ও জার্নি ডকুমেন্টস (Attached PDF)</h2>
+                <p>আমার এই পথচলার পূর্ণাঙ্গ প্রেজেন্টেশন, প্রোফাইল ও বিস্তারিত ডকুমেন্ট নিচে সংযুক্ত করা হয়েছে। তোমরা চাইলে সরাসরি ব্রাউজারেই এটি স্ক্রোল করে পড়তে পারো অথবা ডাউনলোড করে নিতে পারো:</p>
+
+                <div class="article-pdf-box">
+                    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:10px;">
+                        <div>
+                            <span style="font-family:var(--font-mono);color:var(--green);font-size:0.85rem;">// attached_document: adib.pdf</span>
+                            <div style="font-size:0.8rem;color:var(--text3);margin-top:2px;">SE Adib Journey &amp; Profile Document</div>
+                        </div>
+                        <a href="../link/adib.pdf" download class="btn btn-primary btn-sm">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            download_pdf()
+                        </a>
+                    </div>
+                    <iframe src="../link/adib.pdf" class="pdf-embed-frame" title="SE Adib PDF Document">
+                        <p>Your browser does not support inline PDFs. <a href="../link/adib.pdf" download style="color:var(--green);">Download PDF here</a>.</p>
+                    </iframe>
+                </div>
+
+                <h2>৫. ভবিষ্যতের ভাবনা</h2>
+                <p>আমার সামনে এখন লক্ষ্য এইচএসসি ২০২৭-এ সেরা ফলাফল অর্জন এবং একইসাথে সফটওয়্যার ইঞ্জিনিয়ারিংয়ের ক্ষেত্রে আরও গভীরে প্রবেশ করা—বিশেষ করে পাইথন, মেশিন লার্নিং এবং ক্লাউড আর্কিটেকচার নিয়ে কাজ করা।</p>
+                <p>একদিন এমন কিছু সফটওয়্যার সিস্টেম গড়ে তুলতে চাই যা মানুষের প্রতিদিনের বাস্তব সমস্যা সমাধান করবে। আমার স্লোগান সবসময় একটাই থাকবে—<strong>Build the impossible</strong>.</p>
+            </div>
+
+            <!-- Author Card -->
+            <div class="article-author-card">
+                <img src="../images/profile/adib.jpg" alt="SE Adib Halimi" class="article-author-avatar" />
+                <div>
+                    <h4 style="font-size:1.1rem;color:var(--text);margin-bottom:4px;">SE Adib Halimi (Abdullah Al Adib)</h4>
+                    <p style="font-size:0.82rem;color:var(--green);font-family:var(--font-mono);margin-bottom:8px;">Dhaka College (HSC 2027) • Web Developer &amp; Writer</p>
+                    <p style="font-size:0.85rem;color:var(--text2);line-height:1.5;">Science student at Dhaka College. Passionate about web development, technology solutions for students, and Bengali literature under the pseudonym Dr Sahitto.</p>
+                    <div style="display:flex;gap:12px;margin-top:10px;">
+                        <a href="../@fb" target="_blank" style="color:var(--text3);"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                        <a href="../@github" target="_blank" style="color:var(--text3);"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a>
+                        <a href="../@wa" target="_blank" style="color:var(--text3);"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
+                        <a href="../@tg" target="_blank" style="color:var(--text3);"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top:40px;text-align:center;">
+                <a href="../blogs.html" class="btn btn-outline btn-sm">← back_to_blogs()</a>
+            </div>
+        </article>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="footer-logo">SE <span class="dim">ADIB</span></div>
+                <p class="footer-tagline">Software Engineer &amp; Web Developer • Dhaka College (HSC 2027)</p>
+                <div class="footer-location">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span>Bangladesh</span>
+                </div>
+            </div>
+            <div class="footer-links-col">
+                <div class="footer-heading">// navigation</div>
+                <div class="footer-nav-links">
+                    <a href="../index.html">home</a>
+                    <a href="../about.html">about</a>
+                    <a href="../projects.html">projects</a>
+                    <a href="../skills.html">skills</a>
+                    <a href="../achievements.html">achievements</a>
+                    <a href="../blogs.html">blogs</a>
+                    <a href="../blog.html">dhaka_college</a>
+                    <a href="../contact.html">contact</a>
+                    <a href="../link/">private_files</a>
+                </div>
+            </div>
+            <div class="footer-links-col">
+                <div class="footer-heading">// connect</div>
+                <div class="footer-social-row">
+                    <a href="../@fb" target="_blank" class="footer-social-link" title="Facebook" aria-label="Facebook" style="display:inline-flex;align-items:center;justify-content:center;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;display:block;margin:auto;"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="../@m" target="_blank" class="footer-social-link" title="Messenger" aria-label="Messenger" style="display:inline-flex;align-items:center;justify-content:center;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;display:block;margin:auto;"><path d="M12 0C5.373 0 0 4.975 0 11.111c0 3.498 1.745 6.616 4.472 8.652V24l4.083-2.237c1.087.3 2.246.46 3.445.46 6.627 0 12-4.975 12-11.112S18.627 0 12 0zm1.193 14.963l-3.057-3.258-5.964 3.258 6.559-6.963 3.113 3.258 5.909-3.258-6.56 6.963z"/></svg>
+                    </a>
+                    <a href="../@wa" target="_blank" class="footer-social-link" title="WhatsApp" aria-label="WhatsApp" style="display:inline-flex;align-items:center;justify-content:center;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;display:block;margin:auto;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+                    </a>
+                    <a href="../@insta" target="_blank" class="footer-social-link" title="Instagram" aria-label="Instagram" style="display:inline-flex;align-items:center;justify-content:center;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;display:block;margin:auto;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="../@tg" target="_blank" class="footer-social-link" title="Telegram" aria-label="Telegram" style="display:inline-flex;align-items:center;justify-content:center;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;display:block;margin:auto;"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                    </a>
+                    <a href="../@github" target="_blank" class="footer-social-link" title="GitHub" aria-label="GitHub" style="display:inline-flex;align-items:center;justify-content:center;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;display:block;margin:auto;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    </a>
+                    <a href="../@call" class="footer-social-link" title="Call directly" aria-label="Call directly" style="display:inline-flex;align-items:center;justify-content:center;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;display:block;margin:auto;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    </a>
+                    <a href="../@mail" class="footer-social-link" title="Send email" aria-label="Email" style="display:inline-flex;align-items:center;justify-content:center;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;display:block;margin:auto;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>built with <span class="green">♥</span> by <span class="green">SE ADIB</span> (Adib Halimi) &copy; 2026</div>
+            <div class="footer-sub">// Build the impossible</div>
+        </div>
+    </footer>
+    <script src="../scrips/script.js"></script>
+</body>
+</html>
