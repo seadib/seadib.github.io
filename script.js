@@ -176,5 +176,113 @@
   }
   setupModal('.project-card[data-url]', 'projectModal', 'modalMessage', 'modalVisit', 'modalCancel');
   setupModal('.location-card', 'locationModal', 'locationModalMessage', 'locationModalVisit', 'locationModalCancel', null, 'https://www.google.com/maps/place/Hatiya+Island');
-})();
 
+  /* ---- Filter Buttons (Projects, Achievements, Blogs) ---- */
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  if (filterBtns.length) {
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const parent = btn.parentElement;
+        parent.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter || 'all';
+        const cards = document.querySelectorAll('.achievement-card, .project-card, .blog-post-card');
+        cards.forEach(card => {
+          if (!card.dataset.category) return;
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.style.display = '';
+            card.classList.add('fade-in');
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+
+  /* ---- Achievement Modal ---- */
+  const achModal = document.getElementById('achievementModal');
+  if (achModal) {
+    const achTitle = document.getElementById('achModalTitle');
+    const achMeta = document.getElementById('achModalMeta');
+    const achDesc = document.getElementById('achModalDesc');
+    const achPoints = document.getElementById('achModalPoints');
+    const achMainImg = document.getElementById('achModalMainImg');
+    const achThumbs = document.getElementById('achModalThumbs');
+    const achPageBtn = document.getElementById('achModalPageBtn');
+    const achClose = document.getElementById('achModalClose');
+
+    document.querySelectorAll('.achievement-card').forEach(card => {
+      card.addEventListener('click', e => {
+        if (e.target.closest('a')) return;
+        
+        const title = card.dataset.title || '';
+        const meta = card.dataset.meta || '// achievement_detail';
+        const desc = card.dataset.desc || '';
+        const page = card.dataset.page || '';
+        let photos = [];
+        try { photos = JSON.parse(card.dataset.photos || '[]'); } catch(err) { photos = []; }
+        let points = [];
+        try { points = JSON.parse(card.dataset.points || '[]'); } catch(err) { points = []; }
+
+        if (achTitle) achTitle.textContent = title;
+        if (achMeta) achMeta.textContent = meta;
+        if (achDesc) achDesc.innerHTML = desc;
+
+        if (achPoints) {
+          achPoints.innerHTML = '';
+          points.forEach(pt => {
+            const li = document.createElement('li');
+            li.textContent = pt;
+            achPoints.appendChild(li);
+          });
+          achPoints.style.display = points.length ? 'block' : 'none';
+        }
+
+        if (achThumbs && achMainImg) {
+          achThumbs.innerHTML = '';
+          if (photos.length > 0) {
+            achMainImg.src = photos[0];
+            achMainImg.alt = title;
+            achMainImg.style.display = 'block';
+            if (photos.length > 1) {
+              photos.forEach((src, idx) => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = title + ' photo ' + (idx + 1);
+                img.className = 'modal-gallery-thumb' + (idx === 0 ? ' active' : '');
+                img.addEventListener('click', () => {
+                  achMainImg.src = src;
+                  achThumbs.querySelectorAll('.modal-gallery-thumb').forEach(t => t.classList.remove('active'));
+                  img.classList.add('active');
+                });
+                achThumbs.appendChild(img);
+              });
+              achThumbs.style.display = 'flex';
+            } else {
+              achThumbs.style.display = 'none';
+            }
+          } else {
+            achMainImg.style.display = 'none';
+            achThumbs.style.display = 'none';
+          }
+        }
+
+        if (achPageBtn) {
+          if (page) {
+            achPageBtn.href = page;
+            achPageBtn.style.display = 'inline-flex';
+          } else {
+            achPageBtn.style.display = 'none';
+          }
+        }
+
+        achModal.classList.add('show');
+      });
+    });
+
+    if (achClose) achClose.addEventListener('click', () => achModal.classList.remove('show'));
+    achModal.addEventListener('click', e => { if (e.target === achModal) achModal.classList.remove('show'); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && achModal.classList.contains('show')) achModal.classList.remove('show'); });
+  }
+})();
