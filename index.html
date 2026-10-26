@@ -492,17 +492,28 @@
             </div>
         </section>
 
-        <!-- GET IN TOUCH BANNER -->
-        <section id="contact-cta">
-            <div class="glass fade-in" style="padding:40px 24px;text-align:center;border:1px solid var(--border);border-radius:var(--radius);background:var(--card-bg);">
-                <h2 style="font-size:1.8rem;margin-bottom:12px;color:var(--text);">&lt;<span class="accent">get_in_touch</span>&gt;</h2>
-                <p style="color:var(--text2);max-width:540px;margin:0 auto 24px;line-height:1.6;">
-                    Have an idea, want to collaborate on a project, or talk about tech and Dhaka College? Let's connect.
-                </p>
-                <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-                    <a href="contact.html" class="btn btn-primary">send_message()</a>
-                    <a href="@wa" target="_blank" class="btn btn-outline">chat_on_whatsapp() ↗</a>
-                    <a href="@call" class="btn btn-outline">call_direct() ↗</a>
+        <!-- GET IN TOUCH SECTION -->
+        <section id="contact">
+            <div class="section-title">
+                <span>Get in Touch</span>
+                <div class="comment">// send a direct message or connect</div>
+            </div>
+            <div class="fade-in" style="max-width:580px;margin:0 auto;">
+                <form class="contact-form" id="contactForm">
+                    <input type="hidden" name="access_key" value="02b89c0d-9b17-49dd-bd02-ee2c1dee8a9d" />
+                    <input type="text" name="name" placeholder="your_name" required class="stagger-item" />
+                    <input type="email" name="email" placeholder="your_email" required class="stagger-item" />
+                    <textarea rows="5" name="message" placeholder="your_message" required class="stagger-item"></textarea>
+                    <button type="submit" class="btn btn-primary stagger-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                        send_message()
+                    </button>
+                </form>
+                <div id="formResult"></div>
+                <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px;">
+                    <a href="@wa" target="_blank" class="btn btn-outline btn-sm">chat_on_whatsapp() ↗</a>
+                    <a href="@call" class="btn btn-outline btn-sm">call_direct() ↗</a>
+                    <a href="contact.html" class="btn btn-outline btn-sm">all_contact_details() →</a>
                 </div>
             </div>
         </section>
