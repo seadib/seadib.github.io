@@ -1,12 +1,34 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="application-name" content="SE ADIB" /><meta name="apple-mobile-web-app-title" content="SE ADIB" />
-    <title>Life at Dhaka College: Balancing HSC Science &amp; Building Web Software — SE ADIB</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png" /><link rel="shortcut icon" href="../images/favicon/favicon.ico" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="application-name" content="SE ADIB" />
+    <meta name="apple-mobile-web-app-title" content="SE ADIB" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9YM84ZSWMF"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-9YM84ZSWMF');</script>
+    <meta name="msvalidate.01" content="F3ADCCD43A5041C5EEE1798E6DBE9F49" />
+    
+    <title>Life at Dhaka College: Balancing HSC Science &amp; Building Web Software — Abdullah Al Adib (SE ADIB)</title>
+    <meta name="description" content="Life at Dhaka College by Abdullah Al Adib (SE ADIB) — Balancing HSC Science studies with web development, DCSC Portal, and student software projects." />
+    <meta name="keywords" content="Dhaka College science life, HSC 2027, Abdullah Al Adib, SE Adib, DCSC, student developer Bangladesh" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Abdullah Al Adib" />
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="SE ADIB" />
+    <meta property="og:title" content="Life at Dhaka College: Balancing HSC Science &amp; Building Web Software" />
+    <meta property="og:description" content="Balancing HSC Science studies at Dhaka College with coding portals, clubs, and tools. By Abdullah Al Adib." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://adi.pro.bd/blogs/dhaka-college-life.html" />
+    <meta property="og:image" content="https://adi.pro.bd/images/projects/n-dcsc.png" />
+
+    <!-- Favicon & Styles -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png" />
+    <link rel="shortcut icon" href="../images/favicon/favicon.ico" />
+    <link rel="manifest" href="../site.webmanifest" />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+Bengali:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/style.css?v=3.4" />
+    <link rel="stylesheet" href="../css/style.css?v=3.6" />
 </head>
 <body>
     <canvas id="matrixCanvas"></canvas><div id="scrollProgress"></div><div class="cursor-glow" id="cursorGlow"></div>
@@ -23,7 +45,21 @@
                 <a href="../skills.html" class="nav-link">skills</a>
                 <a href="../achievements.html" class="nav-link">achievements</a>
                 <a href="../blogs.html" class="nav-link active">blogs</a>
-                <a href="../blog.html" class="nav-link">dhaka_college</a>
+                <div class="nav-item has-mega">
+                    <a href="../blog.html" class="nav-link">dhaka_college</a>
+                    <div class="mega-menu">
+                        <div class="mega-section">
+                            <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>notes</h4>
+                            <a href="../o/chemistry.html">chemistry.html</a>
+                            <a href="../o/math.html">math.html</a>
+                        </div>
+                        <div class="mega-section">
+                            <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>q&amp;a</h4>
+                            <a href="../blog.html#qa">questions</a>
+                            <a href="../blog.html#answers">solutions</a>
+                        </div>
+                    </div>
+                </div>
                 <a href="../contact.html" class="nav-link">contact</a>
             </div>
         </div>
@@ -31,28 +67,105 @@
 
     <div class="main-wrapper">
         <article class="article-container">
-            <div class="article-header">
-                <div class="article-breadcrumbs">
-                    <a href="../index.html">home</a>
-                    <span>/</span>
-                    <a href="../blogs.html">blogs</a>
-                    <span>/</span>
-                    <span style="color:var(--text2);">dhaka-college-life.html</span>
+            
+            <!-- 1. Top Navigation Bar -->
+            <div class="article-top-bar">
+                <div class="article-back-nav">
+                    <a href="../blogs.html" class="blog-back-btn" title="Back to All Blogs">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                        <span>Back to all blogs</span>
+                    </a>
+                    <div class="article-breadcrumb-trail">
+                        <a href="../index.html">home</a>
+                        <span>/</span>
+                        <a href="../blogs.html">blogs</a>
+                        <span>/</span>
+                        <span class="curr-crumb">dhaka-college-life.html</span>
+                    </div>
                 </div>
-                <h1 class="article-title">Life at Dhaka College: Balancing HSC Science &amp; Building Web Software</h1>
-                <div class="article-meta-row">
-                    <span><strong style="color:var(--green);">Abdullah Al Adib</strong></span>
-                    <span>•</span>
-                    <span>August 2026</span>
-                    <span>•</span>
-                    <span>4 min read</span>
-                    <span>•</span>
-                    <span class="tag">dhaka_college</span>
+                <div class="article-quick-actions">
+                    <div class="font-resizer" title="Reader Font Size">
+                        <button type="button" class="font-btn" onclick="adjustArticleFontSize(-1)" aria-label="Decrease font">A-</button>
+                        <button type="button" class="font-btn" onclick="adjustArticleFontSize(0)" aria-label="Reset font">A</button>
+                        <button type="button" class="font-btn" onclick="adjustArticleFontSize(1)" aria-label="Increase font">A+</button>
+                    </div>
+                    <button type="button" class="quick-share-btn" onclick="copyArticleUrl(this)" title="Copy link to clipboard">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                        <span class="btn-text">Copy link</span>
+                    </button>
                 </div>
             </div>
 
-            <img src="../images/projects/n-dcsc.png" alt="Dhaka College Campus & Science Club" class="article-hero-image" />
+            <!-- 2. Article Header & Meta Bar -->
+            <header class="article-header">
+                <div class="article-category-badge">
+                    <span class="badge-dot"></span>
+                    <span>CAMPUS &amp; STUDENT LIFE • DHAKA COLLEGE</span>
+                </div>
+                <h1 class="article-title">Life at Dhaka College: Balancing HSC Science &amp; Building Web Software</h1>
+                
+                <div class="article-author-card-bar">
+                    <div class="author-pill-group">
+                        <img src="../images/profile/adib.jpg" alt="Abdullah Al Adib" class="author-sm-avatar" />
+                        <div class="author-pill-text">
+                            <div class="author-name-wrap">
+                                <span>Abdullah Al Adib</span>
+                                <span class="author-verified-badge" title="Verified Author">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                                </span>
+                            </div>
+                            <span class="author-role-sub">Dhaka College (HSC 2027) • Science Student</span>
+                        </div>
+                    </div>
+                    <div class="article-stats-group">
+                        <span class="article-stat-item">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            <span>August 2026</span>
+                        </span>
+                        <span>•</span>
+                        <span class="article-stat-item">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            <span>4 min read</span>
+                        </span>
+                        <span>•</span>
+                        <span class="article-stat-item">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                            <span>980 reads</span>
+                        </span>
+                    </div>
+                </div>
+            </header>
 
+            <!-- 3. Featured Hero Media Frame -->
+            <div class="article-hero-wrap">
+                <div class="article-hero-frame">
+                    <img src="../images/projects/n-dcsc.png" alt="Dhaka College Campus & Science Club" />
+                    <div class="article-hero-caption">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                        <span>Dhaka College Science Club (DCSC) Portal &amp; Campus Activities</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Interactive Table of Contents -->
+            <div class="article-toc" id="articleToc">
+                <div class="toc-header" onclick="toggleToc()">
+                    <div class="toc-title">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                        <span>Table of Contents (সূচিপত্র)</span>
+                    </div>
+                    <span class="toc-toggle-icon">▼</span>
+                </div>
+                <div class="toc-body">
+                    <ul class="toc-list">
+                        <li><a href="#section-1">১. এক সাধারণ দিনের রুটিন</a></li>
+                        <li><a href="#section-2">২. সময় ব্যবস্থাপনার কৌশল (Time Management)</a></li>
+                        <li><a href="#section-3">৩. বিজ্ঞান ক্লাবের সাথে কাজ ও লিডারশিপ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 5. Article Content -->
             <div class="article-content">
                 <p>ঢাকা কলেজের ইতিহাস প্রায় দুই শতাব্দীর পুরনো। এমন এক ঐতিহ্যের প্রাঙ্গণে বিজ্ঞান বিভাগের ছাত্র হিসেবে পা রাখা একদিকে যেমন ভীষণ গর্বের, অন্যদিকে তেমনই একটি বড় দায়িত্ব। বিশেষ করে যখন তোমার মাথায় ঘুরপাক খায় নতুন নতুন কোড আর সফটওয়্যার আইডিয়া।</p>
 
@@ -60,20 +173,113 @@
                     "ঢাকা কলেজের লাল ইটের ভবনগুলো তোমাকে শুধু বিজ্ঞানের সমীকরণ শেখায় না, বরং শেখায় কীভাবে প্রতিকূলতার মাঝেও নিজের স্বপ্ন আঁকড়ে ধরে বড় কিছু গড়ে তুলতে হয়।"
                 </blockquote>
 
-                <h2>১. এক সাধারণ দিনের রুটিন</h2>
+                <h2 id="section-1">১. এক সাধারণ দিনের রুটিন</h2>
                 <p>সকাল ৮টায় কলেজের প্র্যাকটিক্যাল ল্যাব বা থিওরি ক্লাস দিয়ে দিনের শুরু। ফিজিক্সের ভেক্টর বা ক্যালকুলাসের ইন্টিগ্রেশন সমাধানের পাশাপাশি ক্লাসের বিরতিতে বা লাইব্রেরিতে বসে মাথায় আসে—কলেজের বন্ধুদের জন্য কীভাবে পড়াশোনা আরও সহজ করা যায়?</p>
                 <p>সেই চিন্তা থেকেই তৈরি করা হয় <strong>Course Link Portal</strong> ও <strong>DCSC Website</strong>। বন্ধুদের সাথে নোট শেয়ার করা, কেমিস্ট্রির জটিল বিক্রিয়ার সারসংক্ষেপ তৈরি করা—সব মিলিয়ে এক রোমাঞ্চকর অভিজ্ঞতা।</p>
 
-                <h2>২. সময় ব্যবস্থাপনার কৌশল (Time Management)</h2>
+                <h2 id="section-2">২. সময় ব্যবস্থাপনার কৌশল (Time Management)</h2>
                 <p>অনেকেই জানতে চান, এইচএসসি বিজ্ঞান বিভাগের মতো কঠিন সিলেবাস সামলে প্রোগ্রামিংয়ের জন্য সময় বের করি কীভাবে? আমার উত্তর হলো—ধারাবাহিকতা (Consistency)। দিনে অন্তত এক ঘণ্টা হোক না কেন, কোডের সাথে থাকাটাই আমাকে সতেজ রাখে।</p>
+                <p>পড়ার সময় পড়ার টেবিলে সম্পূর্ণ মনোযোগ এবং কোডিংয়ের সময় ল্যাপটপে ডিপ ওয়ার্ক—এই দুইয়ের সমন্বয়েই বিজ্ঞান ও কোডিং একসাথে বজায় রাখা সম্ভব হয়।</p>
 
-                <h2>৩. বিজ্ঞান ক্লাবের সাথে কাজ</h2>
-                <p>ঢাকা কলেজ বিজ্ঞান ক্লাবে টেকনোলজি লিড হিসেবে কাজ করার অভিজ্ঞতা আমাকে টিমওয়ার্ক, কমিউনিটি লিডারশিপ এবং ইভেন্ট কোঅর্ডিনেশন শিখিয়েছে। বিজ্ঞান ও প্রযুক্তির বিস্তার ঘটানোই আমাদের মূল লক্ষ্য।</p>
+                <h2 id="section-3">৩. বিজ্ঞান ক্লাবের সাথে কাজ ও লিডারশিপ</h2>
+                <p>ঢাকা কলেজ বিজ্ঞান ক্লাবে টেকনোলজি লিড হিসেবে কাজ করার অভিজ্ঞতা আমাকে টিমওয়ার্ক, কমিউনিটি লিডারশিপ এবং ইভেন্ট কোঅর্ডিনেশন শিখিয়েছে। বিজ্ঞান ও প্রযুক্তির বিস্তার ঘটানোই আমাদের মূল লক্ষ্য। সহপাঠীদের জন্য যখন কোনো প্ল্যাটফর্ম বানিয়ে দেওয়া যায় এবং তারা উপকৃত হয়, তার চেয়ে আনন্দের অনুভূতি আর কিছুতে হতে পারে না।</p>
             </div>
 
-            <div style="margin-top:40px;text-align:center;">
-                <a href="../blogs.html" class="btn btn-outline btn-sm">← back_to_blogs()</a>
+            <!-- 6. Reaction Bar & Share Buttons -->
+            <div class="article-social-actions">
+                <div class="reaction-box">
+                    <button type="button" class="clap-btn" id="clapBtn" onclick="handleArticleClap('dhakacollege')">
+                        <span class="clap-icon">👏</span>
+                        <span class="clap-label">Clap for this post</span>
+                        <span class="clap-counter" id="clapCount">42</span>
+                    </button>
+                    <span class="reaction-hint">Loved this campus story? Leave a clap!</span>
+                </div>
+                <div class="share-box">
+                    <span class="share-title">// Share this post:</span>
+                    <div class="share-buttons-grid">
+                        <a href="#" class="share-btn fb" onclick="shareToFacebook(); return false;" title="Share on Facebook">Facebook</a>
+                        <a href="#" class="share-btn wa" onclick="shareToWhatsApp('Life at Dhaka College: Balancing HSC Science & Web Software'); return false;" title="Share on WhatsApp">WhatsApp</a>
+                        <a href="#" class="share-btn x" onclick="shareToX('Life at Dhaka College — Abdullah Al Adib'); return false;" title="Share on X">X (Twitter)</a>
+                        <a href="#" class="share-btn tg" onclick="shareToTelegram('Life at Dhaka College — Abdullah Al Adib'); return false;" title="Share on Telegram">Telegram</a>
+                        <button type="button" class="share-btn copy" onclick="copyArticleUrl(this)" title="Copy link"><span class="btn-text">Copy Link</span></button>
+                    </div>
+                </div>
             </div>
+
+            <!-- 7. Previous & Next Pagination -->
+            <div class="article-pagination-cards">
+                <a href="myjourney.html" class="pagination-card prev">
+                    <span class="pagination-label">← Previous Article</span>
+                    <span class="pagination-title">My Journey into Coding &amp; Technology — First Lines of HTML</span>
+                </a>
+                <a href="learning-c-programming.html" class="pagination-card next">
+                    <span class="pagination-label">Next Article →</span>
+                    <span class="pagination-title">Why Every Web Developer Should Understand C Programming</span>
+                </a>
+            </div>
+
+            <!-- 8. Interactive Discussion & Comments Section -->
+            <section class="article-comments-section" id="commentsSection">
+                <div class="comments-header-row">
+                    <h3 class="comments-title">
+                        <span>💬 Discussion &amp; Comments (<span id="commentsCount">2</span>)</span>
+                    </h3>
+                    <p class="comments-subtitle">Join the conversation about Dhaka College student life!</p>
+                </div>
+
+                <form class="blog-comment-form" id="blogCommentForm" onsubmit="handleCommentSubmit(event, 'dhakacollege')">
+                    <div class="form-row-2">
+                        <div class="comment-form-group">
+                            <label for="commentAuthor">Your Name <span class="req">*</span></label>
+                            <input type="text" id="commentAuthor" class="comment-input" placeholder="e.g. Shakib Al Hasan" required />
+                        </div>
+                        <div class="comment-form-group">
+                            <label for="commentEmail">Batch / College / Email (Optional)</label>
+                            <input type="text" id="commentEmail" class="comment-input" placeholder="e.g. HSC 27 DC" />
+                        </div>
+                    </div>
+                    <div class="comment-form-group">
+                        <label for="commentMessage">Your Comment <span class="req">*</span></label>
+                        <textarea id="commentMessage" class="comment-textarea" rows="3" placeholder="Share your thoughts on Dhaka College life..." required></textarea>
+                    </div>
+                    <div class="comment-form-footer">
+                        <span class="comment-engine-notice">// Powered by interactive discussion engine. Comments persist locally.</span>
+                        <button type="submit" class="btn btn-primary btn-sm">post_comment()</button>
+                    </div>
+                    <div class="comment-status-msg" id="commentSuccessMsg"></div>
+                </form>
+
+                <div class="comments-list" id="commentsList">
+                    <div class="comment-item">
+                        <div class="comment-avatar">S</div>
+                        <div class="comment-content">
+                            <div class="comment-meta-bar">
+                                <span class="comment-author-name">Sayed Mahmud</span>
+                                <span class="comment-badge-verified">Dhaka College Student</span>
+                                <span class="comment-time">• 3 days ago</span>
+                            </div>
+                            <div class="comment-body-text">
+                                সাইন্সের পাশাপাশি এভাবে নিয়মিত পোর্টাল ডেভেলপ করা সত্যিই দারুণ বিষয়। কোর্স লিংক পোর্টালটা আমাদের বন্ধুদের পড়ার সময় অনেক বাঁচিয়েছে!
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="comment-item">
+                        <div class="comment-avatar">F</div>
+                        <div class="comment-content">
+                            <div class="comment-meta-bar">
+                                <span class="comment-author-name">Fahim Morshed</span>
+                                <span class="comment-time">• 5 days ago</span>
+                            </div>
+                            <div class="comment-body-text">
+                                টাইম ম্যানেজমেন্টের পয়েন্টটা খুব খাঁটি। কনসিস্টেন্সি বজায় রাখলেই দুটো একসাথে করা সম্ভব। গুড লাক আদিব!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
         </article>
     </div>
 
@@ -81,7 +287,7 @@
         <div class="footer-inner">
             <div class="footer-brand">
                 <div class="footer-logo">SE <span class="dim">ADIB</span></div>
-                <p class="footer-tagline">Software Engineer &amp; Web Developer • Dhaka College (HSC 2027)</p>
+                <p class="footer-tagline">Software &amp; Web Developer • Dhaka College (HSC 2027)</p>
                 <div class="footer-location"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Bangladesh</span></div>
             </div>
             <div class="footer-links-col">
@@ -95,15 +301,21 @@
                     <a href="../blogs.html">blogs</a>
                     <a href="../blog.html">dhaka_college</a>
                     <a href="../contact.html">contact</a>
-                    <a href="../link/">private_files</a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <div>built with <span class="green">♥</span> by <span class="green">SE ADIB</span> (Adib Halimi) &copy; 2026</div>
+            <div>built with <span class="green">♥</span> by <span class="green">Abdullah Al Adib</span> (SE ADIB) &copy; 2026</div>
             <div class="footer-sub">// Build the impossible</div>
         </div>
     </footer>
+
     <script src="../scrips/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.initArticleClaps) initArticleClaps('dhakacollege', 42);
+            if (window.initBlogComments) initBlogComments('dhakacollege');
+        });
+    </script>
 </body>
 </html>

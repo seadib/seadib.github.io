@@ -286,3 +286,259 @@
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && achModal.classList.contains('show')) achModal.classList.remove('show'); });
   }
 })();
+
+
+/* ============================================================
+   ENHANCED BLOG FEATURES & INTERACTION ENGINE
+   ============================================================ */
+
+// 1. Copy Article URL with Toast / Button feedback
+window.copyArticleUrl = function(btn) {
+  const url = window.location.href;
+  const originalHtml = btn ? btn.innerHTML : '';
+  
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(url).then(() => {
+      showCopiedFeedback(btn, originalHtml);
+    }).catch(() => {
+      fallbackCopy(url, btn, originalHtml);
+    });
+  } else {
+    fallbackCopy(url, btn, originalHtml);
+  }
+};
+
+function fallbackCopy(text, btn, originalHtml) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.focus();
+  ta.select();
+  try {
+    document.execCommand('copy');
+    showCopiedFeedback(btn, originalHtml);
+  } catch (err) {
+    alert('Article URL: ' + text);
+  }
+  document.body.removeChild(ta);
+}
+
+function showCopiedFeedback(btn, originalHtml) {
+  if (!btn) return;
+  btn.innerHTML = '<span style="color:var(--green);font-weight:700;">✓ Copied!</span>';
+  btn.style.borderColor = 'var(--green)';
+  setTimeout(() => {
+    btn.innerHTML = originalHtml;
+    btn.style.borderColor = '';
+  }, 2200);
+}
+
+// 2. Font Size Adjustment (A- / A / A+)
+window.adjustArticleFontSize = function(delta) {
+  const content = document.querySelector('.article-content');
+  if (!content) return;
+  
+  const currentSize = parseFloat(window.getComputedStyle(content).fontSize);
+  let newSize;
+  
+  if (delta === 0) {
+    newSize = 17.28; // Default 1.08rem
+  } else {
+    newSize = Math.min(Math.max(currentSize + delta * 2, 14), 26);
+  }
+  
+  content.style.fontSize = newSize + 'px';
+  localStorage.setItem('preferred_article_font_size', newSize);
+};
+
+// Auto-restore preferred font size on page load
+document.addEventListener('DOMContentLoaded', () => {
+  const savedSize = localStorage.getItem('preferred_article_font_size');
+  if (savedSize) {
+    const content = document.querySelector('.article-content');
+    if (content) content.style.fontSize = savedSize + 'px';
+  }
+});
+
+// 3. Table of Contents Toggle
+window.toggleToc = function() {
+  const toc = document.getElementById('articleToc');
+  if (toc) toc.classList.toggle('collapsed');
+};
+
+// 4. Reactions / Claps Engine
+window.handleArticleClap = function(slug) {
+  const storageKey = 'blog_claps_' + (slug || 'default');
+  let current = parseInt(localStorage.getItem(storageKey) || '48', 10);
+  current += 1;
+  localStorage.setItem(storageKey, current);
+  
+  const counter = document.getElementById('clapCount');
+  if (counter) {
+    counter.textContent = current;
+    counter.style.transform = 'scale(1.25)';
+    setTimeout(() => { counter.style.transform = 'scale(1)'; }, 200);
+  }
+  
+  const btn = document.getElementById('clapBtn');
+  if (btn) {
+    btn.classList.add('clapped');
+    setTimeout(() => { btn.classList.remove('clapped'); }, 400);
+  }
+};
+
+window.initArticleClaps = function(slug, initialCount) {
+  const storageKey = 'blog_claps_' + (slug || 'default');
+  const stored = localStorage.getItem(storageKey);
+  const count = stored ? parseInt(stored, 10) : (initialCount || 48);
+  const counter = document.getElementById('clapCount');
+  if (counter) counter.textContent = count;
+};
+
+// 5. Social Share Utilities
+window.shareToFacebook = function() {
+  const url = encodeURIComponent(window.location.href);
+  window.open('https://www.facebook.com/sharer/sharer.php?u=' + url, '_blank', 'width=620,height=480');
+};
+
+window.shareToWhatsApp = function(title) {
+  const url = encodeURIComponent(window.location.href);
+  const text = encodeURIComponent((title || document.title) + ' — Read here: ');
+  window.open('https://api.whatsapp.com/send?text=' + text + url, '_blank');
+};
+
+window.shareToX = function(title) {
+  const url = encodeURIComponent(window.location.href);
+  const text = encodeURIComponent((title || document.title) + ' by @seadib');
+  window.open('https://twitter.com/intent/tweet?text=' + text + '&url=' + url, '_blank', 'width=620,height=480');
+};
+
+window.shareToTelegram = function(title) {
+  const url = encodeURIComponent(window.location.href);
+  const text = encodeURIComponent(title || document.title);
+  window.open('https://t.me/share/url?url=' + url + '&text=' + text, '_blank');
+};
+
+window.shareToLinkedIn = function() {
+  const url = encodeURIComponent(window.location.href);
+  window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + url, '_blank', 'width=620,height=480');
+};
+
+// 6. Interactive Discussion & Comments Engine
+window.initBlogComments = function(slug) {
+  const storageKey = 'blog_comments_' + (slug || 'default');
+  const userComments = JSON.parse(localStorage.getItem(storageKey) || '[]');
+  const list = document.getElementById('commentsList');
+  const countElem = document.getElementById('commentsCount');
+  
+  if (!list) return;
+  
+  // Render user comments on top
+  userComments.forEach(c => {
+    appendCommentToDOM(c, false);
+  });
+  
+  if (countElem) {
+    const total = (list.querySelectorAll('.comment-item').length);
+    countElem.textContent = total;
+  }
+};
+
+window.handleCommentSubmit = function(e, slug) {
+  e.preventDefault();
+  const authorInput = document.getElementById('commentAuthor');
+  const emailInput = document.getElementById('commentEmail');
+  const msgInput = document.getElementById('commentMessage');
+  const statusMsg = document.getElementById('commentSuccessMsg');
+  
+  if (!authorInput || !msgInput) return;
+  
+  const author = authorInput.value.trim();
+  const email = emailInput ? emailInput.value.trim() : '';
+  const message = msgInput.value.trim();
+  
+  if (!author || !message) return;
+  
+  const newComment = {
+    author: author,
+    email: email,
+    message: message,
+    time: 'Just now',
+    verified: false,
+    timestamp: Date.now()
+  };
+  
+  // Save to localStorage
+  const storageKey = 'blog_comments_' + (slug || 'default');
+  const userComments = JSON.parse(localStorage.getItem(storageKey) || '[]');
+  userComments.unshift(newComment);
+  localStorage.setItem(storageKey, JSON.stringify(userComments));
+  
+  // Append to DOM
+  appendCommentToDOM(newComment, true);
+  
+  // Update count
+  const list = document.getElementById('commentsList');
+  const countElem = document.getElementById('commentsCount');
+  if (list && countElem) {
+    countElem.textContent = list.querySelectorAll('.comment-item').length;
+  }
+  
+  // Reset form
+  authorInput.value = '';
+  if (emailInput) emailInput.value = '';
+  msgInput.value = '';
+  
+  // Show status feedback
+  if (statusMsg) {
+    statusMsg.className = 'comment-status-msg success';
+    statusMsg.innerHTML = '✓ Comment posted successfully! Thanks for joining the discussion.';
+    setTimeout(() => {
+      statusMsg.className = 'comment-status-msg';
+      statusMsg.innerHTML = '';
+    }, 4000);
+  }
+};
+
+function appendCommentToDOM(comment, animate) {
+  const list = document.getElementById('commentsList');
+  if (!list) return;
+  
+  const item = document.createElement('div');
+  item.className = 'comment-item';
+  if (animate) {
+    item.style.animation = 'fadeIn 0.3s ease';
+  }
+  
+  const initial = (comment.author || 'U').charAt(0).toUpperCase();
+  const verifiedBadge = comment.verified ? '<span class="comment-badge-verified">Verified</span>' : '';
+  const metaSub = comment.email ? (' • <span style="color:var(--text3);font-size:0.75rem;">' + escapeHtml(comment.email) + '</span>') : '';
+  
+  item.innerHTML = `
+    <div class="comment-avatar">${escapeHtml(initial)}</div>
+    <div class="comment-content">
+      <div class="comment-meta-bar">
+        <span class="comment-author-name">${escapeHtml(comment.author)}</span>
+        ${verifiedBadge}
+        ${metaSub}
+        <span class="comment-time">• ${escapeHtml(comment.time || 'Recently')}</span>
+      </div>
+      <div class="comment-body-text">${escapeHtml(comment.message)}</div>
+    </div>
+  `;
+  
+  list.insertBefore(item, list.firstChild);
+}
+
+function escapeHtml(str) {
+  if (!str) return '';
+  return str.replace(/[&<>'"]/g, tag => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    "'": '&#39;',
+    '"': '&quot;'
+  }[tag] || tag));
+}
