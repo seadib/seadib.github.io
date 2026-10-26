@@ -425,7 +425,14 @@ section{padding:70px 0}
 
 /* ===== FOOTER ===== */
 .footer{margin-top:80px;padding:50px 0 30px;border-top:1px solid var(--border);background:var(--bg2);position:relative;z-index:1;font-family:var(--font-sans)}
-.footer-inner{max-width:1100px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 2fr 1.1fr 1.1fr;
+  gap: 40px;
+}
 .footer-logo{font-family:var(--font-mono);font-weight:800;font-size:1.25rem;color:var(--green);letter-spacing:-0.5px;display:flex;align-items:center;gap:6px;margin-bottom:10px}
 .footer-logo .dim{color:var(--text3)}
 .footer-tagline{color:var(--text2);font-size:0.85rem;line-height:1.6;margin-bottom:12px;max-width:380px}
@@ -436,7 +443,13 @@ section{padding:70px 0}
 .footer-nav-links{display:flex;flex-direction:column;gap:8px}
 .footer-nav-links a{display:block;font-family:var(--font-mono);font-size:0.82rem;color:var(--text2);text-decoration:none;transition:var(--transition)}
 .footer-nav-links a:hover{color:var(--green);transform:translateX(4px)}
-.footer-social-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.footer-social-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-top: 14px;
+}
 .footer-social-link{width:38px!important;height:38px!important;min-width:38px!important;min-height:38px!important;max-width:38px!important;max-height:38px!important;border-radius:10px;background:var(--card);border:1px solid var(--border);display:inline-flex!important;align-items:center!important;justify-content:center!important;color:var(--text);transition:var(--transition);text-decoration:none;box-sizing:border-box;flex-shrink:0;padding:0!important;margin:0!important;line-height:0!important}
 .footer-social-link:hover{background:rgba(0,255,136,0.12);border-color:var(--green);color:var(--green);transform:translateY(-3px)!important;box-shadow:0 4px 15px var(--glow)}
 .footer-social-link svg,
@@ -1746,7 +1759,6 @@ section{padding:70px 0}
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: 100%;
   box-sizing: border-box;
 }
 .contact-form-body {

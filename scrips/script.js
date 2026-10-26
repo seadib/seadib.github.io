@@ -131,9 +131,18 @@
   }, { threshold: 0.5 });
   document.querySelectorAll('.stat-number').forEach(el => cObs.observe(el));
 
-  /* ---- Visitor Count ---- */
+  /* ---- Visitor Count (Unique Session Tracking) ---- */
   const vEl = document.querySelector('.visitor-count');
-  if (vEl) { let v = localStorage.getItem('vc'); v = v ? parseInt(v) + 1 : 1; localStorage.setItem('vc', v); vEl.setAttribute('data-target', v); }
+  if (vEl) {
+    let v = localStorage.getItem('vc');
+    let count = v ? parseInt(v, 10) : 53;
+    if (!sessionStorage.getItem('adib_session_visited')) {
+      count++;
+      localStorage.setItem('vc', count);
+      sessionStorage.setItem('adib_session_visited', '1');
+    }
+    vEl.setAttribute('data-target', count);
+  }
 
   /* ---- Typing Effect ---- */
   const typeEl = document.querySelector('.typing-text');
